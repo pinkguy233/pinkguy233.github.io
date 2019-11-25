@@ -197,14 +197,40 @@
                     <div class="col-12 col-lg-12 d-inline-block">
                         <div class="d-inline-block mb-1">
                             <h3>
-                                <a href="https://pinkguy233.github.io/post/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-oracle/">oracle学习日志</a>
+                                <a href="https://pinkguy233.github.io/post/%E4%BC%AA%E5%88%97/">rownum和rowid伪列</a>
+                            </h3>
+                        </div>
+
+                        <div name="posts-post">
+                            伪列介绍：  伪列不存在于任何一张表中，但是会被所有的表共享 伪列可以从表中查询，但不能进行DML操作 常用的伪列有ROWID和ROWNUM  DISTINCT（去重）关键字  不重复显示所有学员姓名和年龄 select DISTINCT stuName,stuAge From stuInfo  STUNAME STUAGE
+王五 15 张三 20 张三 18 李四 20
+可以看到少了一条学号4的数据；
+现有一张stuInfo表，对该表进行操作
+ STUNO STUNAME STUAGE STUID STUSEAT   1 张三 18 1 2 李四 20 2 3 王五 15 3 4 张三 18 4 5 张三 20 5  查询学生姓名，年龄，rowid与rownum （注意需要给表加别名）
+select rowid,rownum,s.stuname,s.stuage from stuInfo s  ROWID ROWNUM STUNAME STUAGE
+AAARUyAAEAAAAGQAAA 1 张三 18 AAARUyAAEAAAAGQAAB 2 李四 20 AAARUyAAEAAAAGQAAC 3 王五 15 AAARUyAAEAAAAGQAAD 4 张三 18 AAARUyAAEAAAAGQAAE 5 张三 20
+                        </div>
+
+                        <div class="f6 text-gray mt-2">
+                            Updated <relative-time datetime="2019-11-25" class="no-wrap"
+                                title="Modifyd at 2019/11/25">
+                                November 25, 2019</relative-time>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="col-12 d-flex width-full py-4 border-bottom public fork">
+                    <div class="col-12 col-lg-12 d-inline-block">
+                        <div class="d-inline-block mb-1">
+                            <h3>
+                                <a href="https://pinkguy233.github.io/post/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-oracle/">oracle介绍</a>
                             </h3>
                         </div>
 
                         <div name="posts-post">
                              前言： Oracle Database，又名Oracle RDBMS，或简称Oracle。是甲骨文公司的一款关系数据库管理系统。它是在数据库领域一直处于领先地位的产品。可以说Oracle数据库系统是目前世界上流行的关系数据库管理系统，系统可移植性好、使用方便、功能强，适用于各类大、中、小、微机环境。它是一种高效率、可靠性好的、适应高吞吐量的数据库方案。 ——来着百度百科
 [TOC]
-一，oracle的基础概念 1.1 主流的关系型数据库  oracle：产品免费，服务收费，强大稳定，安全性高 mysql：AB开源，2008被SUN收购，2009被Oracle收购；社区版免费，企业版收费。 sql server：微软开发，强大的图形化工具，方便使用。 db2：IBM，多个操作系统，多个硬件。  ​
+oracle的基础概念 1.1 主流的关系型数据库  oracle：产品免费，服务收费，强大稳定，安全性高 mysql：AB开源，2008被SUN收购，2009被Oracle收购；社区版免费，企业版收费。 sql server：微软开发，强大的图形化工具，方便使用。 db2：IBM，多个操作系统，多个硬件。  ​
 1.2 oracle版本  oracle8i/9i：internet，开始走向网络
  oracle10g/11g：grid，网格计算，提高访问速度，避免舍近求远的问题
  oracle12：cloud，云计算
@@ -265,27 +291,6 @@ oracle服务器
                             Updated <relative-time datetime="2019-11-23" class="no-wrap"
                                 title="Modifyd at 2019/11/23">
                                 November 23, 2019</relative-time>
-                        </div>
-                    </div>
-                </li>
-                
-                <li class="col-12 d-flex width-full py-4 border-bottom public fork">
-                    <div class="col-12 col-lg-12 d-inline-block">
-                        <div class="d-inline-block mb-1">
-                            <h3>
-                                <a href="https://pinkguy233.github.io/post/test/"></a>
-                            </h3>
-                        </div>
-
-                        <div name="posts-post">
-                            title: &ldquo;java基础&rdquo; date: 2019-11-23 15:10:24+08:00 draft: true
-cover: 上面是犬夜叉拉
-                        </div>
-
-                        <div class="f6 text-gray mt-2">
-                            Updated <relative-time datetime="0001-01-01" class="no-wrap"
-                                title="Modifyd at 0001/01/01">
-                                January 1, 0001</relative-time>
                         </div>
                     </div>
                 </li>
