@@ -6,10 +6,29 @@
     <description>Recent content on PinkGuy主页</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Nov 2019 19:18:27 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 25 Nov 2019 10:31:02 +0800</lastBuildDate>
     
 	<atom:link href="https://pinkguy233.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>oracle学习日志</title>
+      <link>https://pinkguy233.github.io/post/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-oracle/</link>
+      <pubDate>Mon, 25 Nov 2019 10:31:02 +0800</pubDate>
+      
+      <guid>https://pinkguy233.github.io/post/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-oracle/</guid>
+      <description> 前言： Oracle Database，又名Oracle RDBMS，或简称Oracle。是甲骨文公司的一款关系数据库管理系统。它是在数据库领域一直处于领先地位的产品。可以说Oracle数据库系统是目前世界上流行的关系数据库管理系统，系统可移植性好、使用方便、功能强，适用于各类大、中、小、微机环境。它是一种高效率、可靠性好的、适应高吞吐量的数据库方案。 ——来着百度百科
+[TOC]
+一，oracle的基础概念 1.1 主流的关系型数据库  oracle：产品免费，服务收费，强大稳定，安全性高 mysql：AB开源，2008被SUN收购，2009被Oracle收购；社区版免费，企业版收费。 sql server：微软开发，强大的图形化工具，方便使用。 db2：IBM，多个操作系统，多个硬件。  ​
+1.2 oracle版本  oracle8i/9i：internet，开始走向网络
+ oracle10g/11g：grid，网格计算，提高访问速度，避免舍近求远的问题
+ oracle12：cloud，云计算
+  oracle11g：目前主流（各个版本对于学习，研发没有区别，只是在最终的部署，运维时差异较大）
+1.3 oracle服务器 数据库服务器：将数据库部署在服务器上；
+oracle服务器
+ 基于关系型的数据库（RDBMS）：oracle mysql sqlserver db2..
+ 关系型 &amp;ndash;》二维表 非关系型： NoSQL：not only sql（不仅是sql） redis/mongdb：基于key-value结构（person.name）   ​ </description>
+    </item>
     
     <item>
       <title>关于PinkGuy</title>
@@ -19,7 +38,8 @@
       <guid>https://pinkguy233.github.io/about/</guid>
       <description>菜鸟的自我介绍：
 &amp;emsp;&amp;emsp;萌新一枚&amp;hellip;但对编程有着热情。看着那么多语言，比如这个博客就是Go语言搭的，可是我连java还..啊啊啊啊啊啊啊(இωஇ ) ；
-喜欢Animation(以前都是看老婆，现在爽就完事了)， 特摄(可是到目前为止还没有一条腰带o(╥﹏╥)o), 喜欢听日系和Rap(八爷的武道馆太棒了) 哈哈哈。。目前就这样，以后想到再写..就这样吧。  荆轲刺秦  </description>
+喜欢Animation(以前都是看老婆，现在爽就完事了)， 特摄(可是到目前为止还没有一条腰带o(╥﹏╥)o), 喜欢听日系和Rap(八爷的武道馆太棒了) 哈哈哈。。目前就这样，以后想到再写..就这样吧。
+ 荆轲刺秦  </description>
     </item>
     
     <item>
@@ -44,6 +64,16 @@
 3，标识符的命名规范？【只是一种规范，不属于语法，不遵守规范编译器不会报错】 - 见名知意 - 驼峰命名 - 类名，接口名：首字母==大==写，后面每个字母首字母大写； - 变量名，方法名：首字母==小==写，后面每个字母首字母大写； - 常量名：全部大写；
 字面值 字面值： - 10，100 &amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;. 整数 - 3.14 &amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;. 浮点 - “abc” &amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;. 字符串 - ‘a’ &amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;.. 字符 - true，false&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;..布尔
 变量  1.什么是变量 - 变量的本质上来说是内存中的一块空间，这块空间有“数据类型”，“名字”，“字面值”； - 变量包含三部分：数据类型，名称，字面值【数据】； - 变量是内存中储蓄数据的最基本的单元；  2.数据类型的作用？ - 不同的数据有不同的数据类型，不同的数据类型底层会分配不同大小的内存空间； - 数据类型是指导程序在运行阶段应该分配多大的内存空间； 3.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://pinkguy233.github.io/post/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pinkguy233.github.io/post/test/</guid>
+      <description>title: &amp;ldquo;java基础&amp;rdquo; date: 2019-11-23 15:10:24+08:00 draft: true
+cover: 上面是犬夜叉拉</description>
     </item>
     
   </channel>
