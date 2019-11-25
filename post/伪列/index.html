@@ -110,7 +110,7 @@
                     <div class="Box mt-3 position-relative">
                         <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
                             <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
-                                959 Words
+                                976 Words
                                 
                             </div>
                         </div>
@@ -128,54 +128,57 @@
 
 <p><img src="https://pinkguy233.github.io/SpermWarehouse/Amazon-1.jpg" alt="涩图" /></p>
 
-<h4 id="distinct-去重-关键字">DISTINCT（去重）关键字</h4>
+<p>现有一张stuInfo表，对该表进行操作&mdash;</p>
 
-<ul>
-<li>不重复显示所有学员姓名和年龄</li>
-<li><code>select DISTINCT stuName,stuAge From stuInfo</code></li>
-</ul>
-
-<p>STUNAME                                      STUAGE</p>
-
-<hr />
-
-<p>王五                                             15
-张三                                             20
-张三                                             18
-李四                                             20</p>
-
-<p>可以看到少了一条学号4的数据；</p>
-
-<hr />
-
-<p>现有一张stuInfo表，对该表进行操作</p>
-
-<pre><code> STUNO STUNAME                                      STUAGE      STUID    STUSEAT
-</code></pre>
-
-<hr />
-
-<pre><code>     1 张三                                             18                     1
+<pre><code>      STUNO STUNAME                                      STUAGE      STUID    STUSEAT
+---------- ---------------------------------------- ---------- ---------- ----------
+     1 张三                                             18                     1
      2 李四                                             20                     2
      3 王五                                             15                     3
      4 张三                                             18                     4
      5 张三                                             20                     5
 </code></pre>
 
+<hr />
+
+<h4 id="distinct-去重-关键字">DISTINCT（去重）关键字</h4>
+
+<ul>
+<li>不重复显示所有学员姓名和年龄</li>
+
+<li><p><code>select DISTINCT stuName,stuAge From stuInfo</code></p>
+
+<pre><code>STUNAME                                      STUAGE
+---------------------------------------- ----------
+王五                                             15
+张三                                             20
+张三                                             18
+李四                                             20
+</code></pre></li>
+</ul>
+
+<p>可以看到少了一条学号4的数据；</p>
+
+<hr />
+
 <p>查询学生姓名，年龄，rowid与rownum （注意需要给表加别名）</p>
 
 <pre><code>select rowid,rownum,s.stuname,s.stuage from stuInfo s
 </code></pre>
 
-<p>ROWID                  ROWNUM  STUNAME                                      STUAGE</p>
-
-<hr />
-
-<p>AAARUyAAEAAAAGQAAA          1 张三                                             18
+<pre><code>ROWID                  ROWNUM  STUNAME                                      STUAGE
+-------------------------------------------------------------------------
+AAARUyAAEAAAAGQAAA          1 张三                                             18
 AAARUyAAEAAAAGQAAB          2 李四                                             20
 AAARUyAAEAAAAGQAAC          3 王五                                             15
 AAARUyAAEAAAAGQAAD          4 张三                                             18
-AAARUyAAEAAAAGQAAE          5 张三                                             20</p>
+AAARUyAAEAAAAGQAAE          5 张三                                             20
+</code></pre>
+
+<hr />
+
+<pre><code>
+</code></pre>
 
 <p><img src="https://pinkguy233.github.io/SpermWarehouse/伊兹-2.jpg" alt="什么是网格" /></p>
 
@@ -201,11 +204,8 @@ AAARUyAAEAAAAGQAAE          5 张三                                            
 <p>結果：</p>
 
 <pre><code>  STUAGE
-</code></pre>
-
-<hr />
-
-<pre><code>      20
+  ------
+      20
       18
       15
 </code></pre>
@@ -231,18 +231,17 @@ where rownum &lt;= 3
 <h4 id="rowid-物理序列-18位">ROWID ：物理序列（18位）</h4>
 
 <ul>
-<li>根据插入的顺序，依次递增
+<li><p>根据插入的顺序，依次递增</p>
 
-<br /></li>
-</ul>
-
-<h2 id="rowid">ROWID</h2>
-
-<p>AAARUyAAEAAAAGQAAA
+<pre><code>ROWID
+------------------
+AAARUyAAEAAAAGQAAA
 AAARUyAAEAAAAGQAAB
 AAARUyAAEAAAAGQAAC
 AAARUyAAEAAAAGQAAD
-AAARUyAAEAAAAGQAAE</p>
+AAARUyAAEAAAAGQAAE
+</code></pre></li>
+</ul>
 
 <p>前6位：数据对象编号；</p>
 

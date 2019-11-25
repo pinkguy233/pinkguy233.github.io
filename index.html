@@ -209,13 +209,11 @@
                                         <span class="repo js-pinnable-item" title="rownum和rowid伪列">rownum和rowid伪列</span>
                                     </a>
                                 </div>
-                                伪列介绍：  伪列不存在于任何一张表中，但是会被所有的表共享 伪列可以从表中查询，但不能进行DML操作 常用的伪列有ROWID和ROWNUM  DISTINCT（去重）关键字  不重复显示所有学员姓名和年龄 select DISTINCT stuName,stuAge From stuInfo  STUNAME STUAGE
-王五 15 张三 20 张三 18 李四 20
-可以看到少了一条学号4的数据；
-现有一张stuInfo表，对该表进行操作
- STUNO STUNAME STUAGE STUID STUSEAT   1 张三 18 1 2 李四 20 2 3 王五 15 3 4 张三 18 4 5 张三 20 5  查询学生姓名，年龄，rowid与rownum （注意需要给表加别名）
-select rowid,rownum,s.stuname,s.stuage from stuInfo s  ROWID ROWNUM STUNAME STUAGE
-AAARUyAAEAAAAGQAAA 1 张三 18 AAARUyAAEAAAAGQAAB 2 李四 20 AAARUyAAEAAAAGQAAC 3 王五 15 AAARUyAAEAAAAGQAAD 4 张三 18 AAARUyAAEAAAAGQAAE 5 张三 20
+                                伪列介绍：  伪列不存在于任何一张表中，但是会被所有的表共享 伪列可以从表中查询，但不能进行DML操作 常用的伪列有ROWID和ROWNUM  现有一张stuInfo表，对该表进行操作&mdash;
+ STUNO STUNAME STUAGE STUID STUSEAT ---------- ---------------------------------------- ---------- ---------- ---------- 1 张三 18 1 2 李四 20 2 3 王五 15 3 4 张三 18 4 5 张三 20 5  DISTINCT（去重）关键字  不重复显示所有学员姓名和年龄 select DISTINCT stuName,stuAge From stuInfo
+STUNAME STUAGE ---------------------------------------- ---------- 王五 15 张三 20 张三 18 李四 20   可以看到少了一条学号4的数据；
+查询学生姓名，年龄，rowid与rownum （注意需要给表加别名）
+select rowid,rownum,s.stuname,s.stuage from stuInfo s  ROWID ROWNUM STUNAME STUAGE ------------------------------------------------------------------------- AAARUyAAEAAAAGQAAA 1 张三 18 AAARUyAAEAAAAGQAAB 2 李四 20 AAARUyAAEAAAAGQAAC 3 王五 15 AAARUyAAEAAAAGQAAD 4 张三 18 AAARUyAAEAAAAGQAAE 5 张三 20    ROWNUM ：逻辑序列  不用的sql语句在执行时，rownum的值不一致；
                                 <div class="f6 text-gray mt-2">
                                     Updated <relative-time datetime="2019-11-25"
                                         class="no-wrap" title="Modify at 2019/11/25">
