@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <link crossorigin="anonymous" media="all"
+        rel="stylesheet"
+        href="https://pinkguy233.github.io/css/frameworks.css" />
+    <link crossorigin="anonymous" media="all"
+        rel="stylesheet" href="https://pinkguy233.github.io/css/github.css" />
+    <meta name="viewport" content="width=device-width">
+
+    <title>springboot整合 - PinkGuy主页</title>
+
+    <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://pinkguy233.github.io/images/favicon.ico">
+    <meta name="theme-color" content="#1e2327">
+    
+</head>
+
+<body class="env-production emoji-size-boost page-responsive page-profile">
+  <div class="position-relative js-header-wrapper ">
+    <span class="Progress progress-pjax-loader position-fixed width-full js-pjax-loader-bar">
+        <span class="progress-pjax-loader-bar top-0 left-0" style="width: 0%;"></span>
+    </span>
+    <header class="Header js-details-container Details flex-wrap flex-lg-nowrap p-responsive" role="banner">
+        <div class="Header-item d-none d-lg-flex">
+            <a class="Header-link" href="https://pinkguy233.github.io/" aria-label="Homepage"
+                data-ga-click="Header, go to dashboard, icon:logo">
+                <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1"
+                    width="32" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+            </a>
+        </div>
+        <div
+            class="Header-item Header-item--full flex-column flex-lg-row width-full flex-order-2 flex-lg-order-none mr-0 mr-lg-3 mt-3 mt-lg-0 Details-content--hidden">
+            <div class="header-search flex-self-stretch flex-lg-self-auto mr-0 mr-lg-3 mb-3 mb-lg-0 scoped-search site-scoped-search js-site-search position-relative js-jump-to"
+                role="combobox" aria-owns="jump-to-results" aria-label="Search or jump to" aria-haspopup="listbox"
+                aria-expanded="false">
+                <div class="position-relative">
+                </div>
+            </div>
+        </div>
+        <div class="Header-item Header-item--full flex-justify-center d-lg-none position-relative" style="margin-right: auto;">
+            <a class="Header-link" href="https://pinkguy233.github.io/" aria-label="Homepage"
+                data-ga-click="Header, go to dashboard, icon:logo">
+                <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1"
+                    width="32" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+            </a>
+        </div>
+        <div class="Header-item position-relative mr-0 d-none d-lg-flex">
+            <details class="details-overlay details-reset">
+                <summary class="Header-link" aria-label="View profile and more"
+                    data-ga-click="Header, show menu, icon:avatar">
+                    
+                    <img alt="" class="avatar" src="https://pinkguy233.github.io/images/avatar.png" height="20" width="20">
+                    
+                </summary>
+            </details>
+        </div>
+    </header>
+</div>
+
+<div id="start-of-content" class="show-on-focus"></div>
+<div id="js-flash-container">
+</div>
+
+  
+<div class="application-main " data-commit-hovercards-enabled="">
+    <div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="">
+        <main id="js-repo-pjax-container" data-pjax-container="">
+            <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav pt-0 pt-lg-4 ">
+                <div class="repohead-details-container clearfix container-lg p-responsive d-none d-lg-block">
+                    <div class="mb-3 d-flex">
+                        <h1 class="public css-truncate float-none flex-auto width-fit pl-0">
+                            <a class="avatar mr-1" href="https://pinkguy233.github.io/about/">
+                            
+                                <img
+                                    src="https://pinkguy233.github.io/images/avatar.png" width="26" height="26">
+                            
+                            </a>
+                            <span class="author"><a
+                                    href="https://pinkguy233.github.io/">PinkGuy</a></span>
+                            <span class="path-divider">/</span>
+                            <strong itemprop="name" class="css-truncate-target" style="max-width: 410px"><a
+                                    href="https://pinkguy233.github.io/post/spring_mybatis/">springboot整合</a></strong>
+
+                            <div class="d-block text-small text-gray">
+                                Created <time-ago datetime="2019-12-25" class="no-wrap"
+                                    title="Created at 2019/12/25">
+                                    2019-12-25</time-ago>
+                                <span class="file-info-divider"></span>
+                                Modifyd <time-ago datetime="2019-12-25" class="no-wrap"
+                                    title="Modifyd at 2019/12/25">
+                                    2019-12-25</time-ago>
+                            </div>
+                        </h1>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="container-lg clearfix new-discussion-timeline experiment-repo-nav  p-responsive">
+                <div class="repository-content ">
+                    <div class="Box mt-3 position-relative">
+                        <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
+                            <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                                1278 Words
+                                
+                            </div>
+                        </div>
+
+                        <div id="readme" class="Box-body readme blob instapaper_body js-code-block-container">
+                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><ul>
+<li>创建一个 Spring Initializr项目 （参照）</li>
+</ul>
+
+<p><img src="https://pinkguy233.github.io/SpermWarehouse/SpringBoot/创建整合文件.png" alt="例2.png" /></p>
+
+<ul>
+<li>本文不使用application.properties文件 而使用更加简洁的application.yml文件。将resource文件夹下原有的application.properties文件删除，创建application.yml配置文件（备注：其实SpringBoot底层会把application.yml文件解析为application.properties），本文创建了两个yml文件（application.yml和application-dev.yml），分别来看一下内容</li>
+</ul>
+
+<p>application.yml</p>
+
+<pre><code class="language-yml">spring:
+  profiles:
+    active: dev
+</code></pre>
+
+<p>application-dev.yml</p>
+
+<pre><code class="language-yml">server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: 333
+    url: jdbc:mysql://localhost:3306/smbms
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.example.ssm.entity
+</code></pre>
+
+<ul>
+<li>创建 对应的表，（用自己的就好）</li>
+<li>创建包controller，entity，service，dao（习惯把数据层叫dao）。resources下创建mapper 文件夹，用于写sql语句；</li>
+<li>直接贴代码</li>
+</ul>
+
+<p>User.java (记得get set )</p>
+
+<pre><code class="language-java">  public class User {
+  
+      private  int id;
+      private  String userCode;
+      private  String userName;
+      private  String userPassword;
+      }
+</code></pre>
+
+<p>UserDao.java</p>
+
+<pre><code class="language-java">@Repository
+public interface UserDao {
+
+    List&lt;User&gt; loadAll();
+
+}
+</code></pre>
+
+<p>UserMapper.xml</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+
+&lt;mapper namespace=&quot;com.example.ssm.dao.UserDao&quot;&gt;
+
+    &lt;select id=&quot;loadAll&quot; resultType=&quot;com.example.ssm.entity.User&quot;&gt;
+     select * from smbms_user
+    &lt;/select&gt;
+
+&lt;/mapper&gt;
+</code></pre>
+
+<p>UserService.java</p>
+
+<pre><code class="language-java">@Service
+public class UserService {
+
+    @Autowired
+    private UserDao userDao;
+
+    public List&lt;User&gt; loadAll(){
+        return userDao.loadAll();
+    }
+}
+</code></pre>
+
+<p>UserController.java</p>
+
+<pre><code class="language-java">@Controller
+public class MasterController {
+
+    @Autowired
+    private UserService us;
+    
+	@ResponseBody //看情况加（加了直接输入，不加跳转到Hello,SpringBoot.html）
+    @RequestMapping(&quot;hello&quot;)
+    public String hello(){
+        System.out.println(&quot;进&quot;);
+        List&lt;User&gt; users = us.loadAll();
+        for (User u:users) {
+            System.out.println(u.toString());
+        }
+
+        return &quot;Hello,SpringBoot&quot;;
+    }
+</code></pre>
+
+<ul>
+<li>框架完成目录</li>
+</ul>
+
+<p><img src="https://pinkguy233.github.io/SpermWarehouse/SpringBoot/目录1.png" alt="SpringInitializr.png" /></p>
+
+<ul>
+<li><p>最后再给启动类 下面在 启动类 里加上注解用于给出需要扫描的 dao文件路径  （启动类路径一定要比其他类高一级）@MapperScan(&ldquo;com.example.ssm.dao&rdquo;)</p>
+
+<pre><code class="language-java">@MapperScan(&quot;com.example.ssm.dao&quot;)
+@SpringBootApplication
+public class SsmApplication {
+public static void main(String[] args) {
+    SpringApplication.run(SsmApplication.class, args);
+}
+
+}
+</code></pre></li>
+
+<li><p>最后浏览器输入</p></li>
+</ul>
+
+<p><img src="https://pinkguy233.github.io/SpermWarehouse/SpringBoot/效果1.png" alt="SpringInitializr.png" /></p>
+
+<ul>
+<li><p>控制台展示</p>
+
+<pre><code class="language-java">进
+
+User{id=1, userCode='admin', userName='系统管理员', userPassword='1234567'}
+User{id=2, userCode='liming', userName='我', userPassword='0000000'}
+User{id=5, userCode='hanlubiao', userName='韩路彪', userPassword='0000000'}
+User{id=6, userCode='zhanghua', userName='张华', userPassword='0000000'}
+User{id=7, userCode='wangyang', userName='王洋', userPassword='0000000'}
+User{id=8, userCode='zhaoyan', userName='赵燕', userPassword='0000000'}
+User{id=10, userCode='sunlei', userName='孙磊', userPassword='0000000'}
+User{id=11, userCode='sunxing', userName='孙兴', userPassword='0000000'}
+User{id=12, userCode='zhangchen', userName='张晨', userPassword='0000000'}
+User{id=13, userCode='dengchao', userName='邓超', userPassword='0000000'}
+User{id=14, userCode='yangguo', userName='杨过', userPassword='0000000'}
+User{id=15, userCode='zhaomin', userName='赵敏', userPassword='0000000'}
+User{id=16, userCode='liubo', userName='刘波', userPassword='00000000'}
+User{id=17, userCode='liubo', userName='刘波', userPassword='00000000'}
+User{id=27, userCode='null', userName='null', userPassword='null'}
+User{id=28, userCode='null', userName='null', userPassword='null'}
+</code></pre></li>
+</ul>
+
+<hr />
+
+<p>尝试加入SpringMVC</p>
+
+<p>​   application-dev.yml 中加入模板代码块；</p>
+
+<p>​   pom.xml 中添加  前端模板，顺便修改mysql驱动（我是改了，不然版本有点高启动不了）</p>
+
+<p>​   修改controller</p>
+
+<p>​   templates目录下添加index.html</p>
+
+<p>application-dev.yml</p>
+
+<pre><code class="language-yml">server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: 333
+    url: jdbc:mysql://localhost:3306/smbms
+    driver-class-name: com.mysql.jdbc.Driver
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.example.ssm.entity
+</code></pre>
+
+<p>pom.xml</p>
+
+<pre><code class="language-xml">   &lt;dependency&gt; &lt;!-- 需要修改的 --&gt;
+            &lt;groupId&gt;mysql&lt;/groupId&gt;
+            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+            &lt;version&gt;5.1.38&lt;/version&gt;
+   &lt;/dependency&gt;
+   
+      &lt;dependency&gt; &lt;!-- 添加的 --&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+</code></pre>
+
+<p>Controller.java</p>
+
+<pre><code class="language-java">@Controller
+public class MasterController {
+
+    @Autowired
+    private UserService us;
+
+    @RequestMapping(&quot;hello&quot;)
+    public String hello(Model mo){
+
+        System.out.println(&quot;进&quot;);
+        List&lt;User&gt; users = us.loadAll();
+        for (User u:users) {
+            System.out.println(u.toString());
+        }
+        mo.addAttribute(&quot;u&quot;,users);
+        return &quot;index&quot;;
+    }
+</code></pre>
+
+<p>index.html</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt; &lt;!-- 注意加th --&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;index&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+
+&lt;table width=&quot;500px&quot; &gt;
+    &lt;tr&gt;
+        &lt;td&gt;ID&lt;/td&gt;
+        &lt;td&gt;姓名&lt;/td&gt;
+        &lt;td&gt;密码&lt;/td&gt;
+        &lt;td&gt;电话&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr th:each=&quot;us : ${u}&quot; &gt;
+        &lt;td th:text=&quot;${us.id}&quot;&gt;&lt;/td&gt;
+        &lt;td th:text=&quot;${us.userName}&quot;&gt;&lt;/td&gt;
+        &lt;td th:text=&quot;${us.userPassword}&quot;&gt;&lt;/td&gt;
+        &lt;td th:text=&quot;${us.userCode}&quot;&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<ul>
+<li>启动后效果</li>
+</ul>
+
+<p><img src="https://pinkguy233.github.io/SpermWarehouse/SpringBoot/效果2.png" alt="SpringInitializr.png" /></p>
+
+<p>以上就是全部内容</p>
+
+<p><img src="https://pinkguy233.github.io/SpermWarehouse/pichi.png" alt="SpringInitializr.png" /></p>
+</article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<div class="utterances"></div>
+<script src="https://utteranc.es/client.js"
+        repo="example/example.github.io"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+  <div class="footer container-lg width-full p-responsive" role="contentinfo">
+    <div
+        class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+        <ul
+            class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+            <li class="mr-3 mr-lg-0">© 2019. Theme by <a href="https://github.com/MeiK2333/github-style"><span>github-style</span></a></li>
+        </ul>
+
+        <a aria-label="Homepage" title="PinkGuy主页" class="footer-octicon d-none d-lg-block mx-lg-4"
+            href="https://pinkguy233.github.io/">
+            <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24"
+                aria-hidden="true">
+                <path fill-rule="evenodd"
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                </path>
+            </svg>
+        </a>
+        <ul
+            class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+        </ul>
+    </div>
+    <div class="d-flex flex-justify-center pb-6">
+        <span class="f6 text-gray-light"></span>
+    </div>
+</div>
+
+<script crossorigin="anonymous"
+    type="application/javascript" src="https://pinkguy233.github.io/js/frameworks.js"></script>
+
+<script crossorigin="anonymous" async="async"
+    type="application/javascript" src="https://pinkguy233.github.io/js/github-bootstrap.js"></script>
+<script>
+    let classs = ['pinned-item-desc', 'text-gray', 'text-small', 'd-block', 'mt-2', 'mb-3'];
+    const pinned_posts = document.getElementsByName('pinned-post');
+    for (let i = 0; i < pinned_posts.length; i++) {
+        for (let j = 0; j < classs.length; j++) {
+            const ps = pinned_posts[i].getElementsByTagName('p');
+            for (let k = 0; k < ps.length; k++) {
+                ps[k].classList.add(classs[j]);
+            }
+        }
+    }
+    classs = [ 'd-inline-block', 'text-gray', 'mb-2', 'pr-4'];
+    const posts_posts = document.getElementsByName('posts-post');
+    for (let i = 0; i < posts_posts.length; i++) {
+        for (let j = 0; j < classs.length; j++) {
+            const ps = posts_posts[i].getElementsByTagName('p');
+            for (let k = 0; k < ps.length; k++) {
+                ps[k].classList.add(classs[j]);
+            }
+        }
+    }
+</script>
+</body>
+
+</html>

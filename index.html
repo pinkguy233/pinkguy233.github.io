@@ -178,7 +178,7 @@
             <a class="UnderlineNav-item mr-0 mr-md-1 mr-lg-3 " href="https://pinkguy233.github.io/posts/">
                 Posts
                 <span class="Counter hide-lg hide-md hide-sm">
-                    3
+                    9
                 </span>
             </a>
             <a class="UnderlineNav-item mr-0 mr-md-1 mr-lg-3 " href="https://pinkguy233.github.io/about/">
@@ -205,19 +205,19 @@
                                         <path fill-rule="evenodd"
                                             d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z" />
                                     </svg>
-                                    <a href="https://pinkguy233.github.io/post/%E4%BC%AA%E5%88%97/" class="text-bold flex-auto min-width-0 ">
-                                        <span class="repo js-pinnable-item" title="rownum和rowid伪列">rownum和rowid伪列</span>
+                                    <a href="https://pinkguy233.github.io/post/spring_mybatis/" class="text-bold flex-auto min-width-0 ">
+                                        <span class="repo js-pinnable-item" title="springboot整合">springboot整合</span>
                                     </a>
                                 </div>
-                                伪列介绍：  伪列不存在于任何一张表中，但是会被所有的表共享 伪列可以从表中查询，但不能进行DML操作 常用的伪列有ROWID和ROWNUM  现有一张stuInfo表，对该表进行操作&mdash;
- STUNO STUNAME STUAGE STUID STUSEAT ---------- ---------------------------------------- ---------- ---------- ---------- 1 张三 18 1 2 李四 20 2 3 王五 15 3 4 张三 18 4 5 张三 20 5  DISTINCT（去重）关键字  不重复显示所有学员姓名和年龄 select DISTINCT stuName,stuAge From stuInfo
-STUNAME STUAGE ---------------------------------------- ---------- 王五 15 张三 20 张三 18 李四 20   可以看到少了一条学号4的数据；
-查询学生姓名，年龄，rowid与rownum （注意需要给表加别名）
-select rowid,rownum,s.stuname,s.stuage from stuInfo s  ROWID ROWNUM STUNAME STUAGE ------------------------------------------------------------------------- AAARUyAAEAAAAGQAAA 1 张三 18 AAARUyAAEAAAAGQAAB 2 李四 20 AAARUyAAEAAAAGQAAC 3 王五 15 AAARUyAAEAAAAGQAAD 4 张三 18 AAARUyAAEAAAAGQAAE 5 张三 20    ROWNUM ：逻辑序列  不用的sql语句在执行时，rownum的值不一致；
+                                创建一个 Spring Initializr项目 （参照）   本文不使用application.properties文件 而使用更加简洁的application.yml文件。将resource文件夹下原有的application.properties文件删除，创建application.yml配置文件（备注：其实SpringBoot底层会把application.yml文件解析为application.properties），本文创建了两个yml文件（application.yml和application-dev.yml），分别来看一下内容  application.yml
+spring: profiles: active: dev  application-dev.yml
+server: port: 8080 spring: datasource: username: root password: 333 url: jdbc:mysql://localhost:3306/smbms driver-class-name: com.mysql.jdbc.Driver mybatis: mapper-locations: classpath:mapper/*Mapper.xml type-aliases-package: com.example.ssm.entity   创建 对应的表，（用自己的就好） 创建包controller，entity，service，dao（习惯把数据层叫dao）。resources下创建mapper 文件夹，用于写sql语句； 直接贴代码  User.java (记得get set )
+public class User { private int id; private String userCode; private String userName; private String userPassword; }  UserDao.java
+@Repository public interface UserDao { List&lt;User&gt; loadAll(); }  UserMapper.
                                 <div class="f6 text-gray mt-2">
-                                    Updated <relative-time datetime="2019-11-25"
-                                        class="no-wrap" title="Modify at 2019/11/25">
-                                        November 25, 2019</relative-time>
+                                    Updated <relative-time datetime="2019-12-25"
+                                        class="no-wrap" title="Modify at 2019/12/25">
+                                        December 25, 2019</relative-time>
                                 </div>
                             </div>
                         </div>
@@ -233,25 +233,22 @@ select rowid,rownum,s.stuname,s.stuage from stuInfo s  ROWID ROWNUM STUNAME STUA
                                         <path fill-rule="evenodd"
                                             d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z" />
                                     </svg>
-                                    <a href="https://pinkguy233.github.io/post/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-oracle/" class="text-bold flex-auto min-width-0 ">
-                                        <span class="repo js-pinnable-item" title="oracle介绍">oracle介绍</span>
+                                    <a href="https://pinkguy233.github.io/post/application%E9%85%8D%E7%BD%AE/" class="text-bold flex-auto min-width-0 ">
+                                        <span class="repo js-pinnable-item" title="yml配置学习">yml配置学习</span>
                                     </a>
                                 </div>
-                                 前言： Oracle Database，又名Oracle RDBMS，或简称Oracle。是甲骨文公司的一款关系数据库管理系统。它是在数据库领域一直处于领先地位的产品。可以说Oracle数据库系统是目前世界上流行的关系数据库管理系统，系统可移植性好、使用方便、功能强，适用于各类大、中、小、微机环境。它是一种高效率、可靠性好的、适应高吞吐量的数据库方案。 ——来着百度百科
-[TOC]
-oracle的基础概念 1.1 主流的关系型数据库  oracle：产品免费，服务收费，强大稳定，安全性高 mysql：AB开源，2008被SUN收购，2009被Oracle收购；社区版免费，企业版收费。 sql server：微软开发，强大的图形化工具，方便使用。 db2：IBM，多个操作系统，多个硬件。  ​
-1.2 oracle版本  oracle8i/9i：internet，开始走向网络
- oracle10g/11g：grid，网格计算，提高访问速度，避免舍近求远的问题
- oracle12：cloud，云计算
-  oracle11g：目前主流（各个版本对于学习，研发没有区别，只是在最终的部署，运维时差异较大）
-1.3 oracle服务器 数据库服务器：将数据库部署在服务器上；
-oracle服务器
- 基于关系型的数据库（RDBMS）：oracle mysql sqlserver db2..
- 关系型 &ndash;》二维表 非关系型： NoSQL：not only sql（不仅是sql） redis/mongdb：基于key-value结构（person.name）   ​ 
+                                默认全局配置文件：
+​ application.properties：
+ k = v；  ​ application.yml :
+ k：空格v
+ yaml ain&rsquo;t myarkup language(yaml不是一个标记文档，xml是标记文档)
+  试用 application.yml  创建实体类（給上get set）
+ public class Student { private String name; private int age; private boolean sex; private Date birthday; private Map location; private List hobbies; private String[] skills; private Pet pet; }  编写application.yml
+ student: name: zs age: 28 sex: false birthday: 2019/12/24 #时间 location: {province: 新疆,city: 西安} #map hobbies: #list集合 - 足球 - 篮球 skills: # 数组 - 编程 pet:	# 特殊对象 pname: 刘波 page: 8  再在实体类加上（注解）
                                 <div class="f6 text-gray mt-2">
-                                    Updated <relative-time datetime="2019-11-25"
-                                        class="no-wrap" title="Modify at 2019/11/25">
-                                        November 25, 2019</relative-time>
+                                    Updated <relative-time datetime="2019-12-25"
+                                        class="no-wrap" title="Modify at 2019/12/25">
+                                        December 25, 2019</relative-time>
                                 </div>
                             </div>
                         </div>
@@ -267,17 +264,99 @@ oracle服务器
                                         <path fill-rule="evenodd"
                                             d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z" />
                                     </svg>
-                                    <a href="https://pinkguy233.github.io/post/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="text-bold flex-auto min-width-0 ">
-                                        <span class="repo js-pinnable-item" title="数据类型">数据类型</span>
+                                    <a href="https://pinkguy233.github.io/post/%E7%AC%AC%E4%B8%80%E4%B8%AAspringboot/" class="text-bold flex-auto min-width-0 ">
+                                        <span class="repo js-pinnable-item" title="第一个Springboot">第一个Springboot</span>
                                     </a>
                                 </div>
-                                前言： 程序当中有很多数据，每一个数据都是有相关的数据类型的，不同的数据类型占用空间的大小也不同.
-数据类型的作用是指导JVM运行程序的时候给该数据分配多大的内存空间。
-数据类型-介绍 java中的数据类型包括两种：  基本数据类型 引用数据类型 ###关于基本数据类型： 基本数据类型包括 四大类 八小种     第一类：整数型 第二类：浮点型     byte，short，int，long float,double       第三类：布尔型 第四类：字符型     boolean char    字符串属于==引用数据类型  字符串使用双引号“A”， 字符 使用双引号‘A’；  八种数据类型各自所占用空间大小是多少？    基本数据类型 占用空间大小【单位：字节】     byte 1   short 2   int 4   long 8   float 4   double 8   boolean 1   char 2    计算机在任何情况下只能识别二进制.
+                                 创建一个SpringBoot-Maven文件；  方式1：可以直接从Idea工具中选择Spring Initializr创建Maven工程，然后导入相关jar包；（第一次导入会很慢） 方式2：进入 https://start.spring.io/ 直接创建项目，再使用工具导入 Maven项目；  创建一个Controller测试； @Controller public class HelloWorldController { @ResponseBody @RequestMapping(&quot;hello&quot;) public String helloWorld() { return &quot;HelloWord,SpringBoot&quot;; } }  注意：使用@SpringBootApplication 注解 Controller必须在该注解所在包下；
+ @SpringBootConfiguration  包含@Configuration，表示:1.该类是一个配置类，2.会自动纳入Spring容器中  @EnableAutoConfiguration  运行项目 
                                 <div class="f6 text-gray mt-2">
-                                    Updated <relative-time datetime="2019-11-24"
-                                        class="no-wrap" title="Modify at 2019/11/24">
-                                        November 24, 2019</relative-time>
+                                    Updated <relative-time datetime="2019-12-23"
+                                        class="no-wrap" title="Modify at 2019/12/23">
+                                        December 23, 2019</relative-time>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="col-12 col-md-6 col-lg-6 mb-3 d-flex flex-content-stretch">
+                        <div
+                            class="Box pinned-item-list-item d-flex p-3 width-full js-pinned-item-list-item public source  sortable-button-item">
+                            <div class="pinned-item-list-item-content" name="pinned-post">
+                                <div class="d-flex width-full flex-items-center position-relative">
+                                    <svg class="octicon octicon-repo mr-2 text-gray flex-shrink-0" viewBox="0 0 12 16"
+                                        version="1.1" width="12" height="16" aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z" />
+                                    </svg>
+                                    <a href="https://pinkguy233.github.io/post/ssh%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4/" class="text-bold flex-auto min-width-0 ">
+                                        <span class="repo js-pinnable-item" title="Ssh框架搭建步骤">Ssh框架搭建步骤</span>
+                                    </a>
+                                </div>
+                                 1.导入相关jar包  hibaernate spring hibernate+spring 连接池(ommons-dbcp) struts2 struts2+spring 数据库驱动 servlet-api(看情况)  2.配置hibernate并测试 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;!DOCTYPE hibernate-configuration PUBLIC &quot;-//Hibernate/Hibernate Configuration DTD 3.0//EN&quot; &quot;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&quot;&gt; &lt;hibernate-configuration&gt; &lt;session-factory&gt; &lt;property name=&quot;connection.driver_class&quot;&gt; oracle.jdbc.OracleDriver &lt;/property&gt; &lt;property name=&quot;connection.url&quot;&gt; jdbc:oracle:thin:@192.168.206.1:1521:orcl &lt;/property&gt; &lt;property name=&quot;connection.username&quot;&gt;scott&lt;/property&gt; &lt;property name=&quot;connection.password&quot;&gt;333&lt;/property&gt; &lt;property name=&quot;dialect&quot;&gt; org.hibernate.dialect.Oracle10gDialect &lt;/property&gt; &lt;/session-factory&gt; &lt;/hibernate-configuration&gt;   再写个工具类测试  3.将 hibernate 关联到 spring 并测试 &lt;!-- 关联hibernate配置文件 --&gt; &lt;bean id=&quot;sessionFactory&quot; class=&quot;org.springframework.orm.hibernate3.LocalSessionFactoryBean&quot;&gt; &lt;property name=&quot;configLocation&quot;&gt; &lt;value&gt;classpath:hibernate.cfg.xml&lt;/value&gt; &lt;/property&gt; &lt;/bean&gt;  4.配置Struts2 
+                                <div class="f6 text-gray mt-2">
+                                    Updated <relative-time datetime="2019-12-13"
+                                        class="no-wrap" title="Modify at 2019/12/13">
+                                        December 13, 2019</relative-time>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="col-12 col-md-6 col-lg-6 mb-3 d-flex flex-content-stretch">
+                        <div
+                            class="Box pinned-item-list-item d-flex p-3 width-full js-pinned-item-list-item public source  sortable-button-item">
+                            <div class="pinned-item-list-item-content" name="pinned-post">
+                                <div class="d-flex width-full flex-items-center position-relative">
+                                    <svg class="octicon octicon-repo mr-2 text-gray flex-shrink-0" viewBox="0 0 12 16"
+                                        version="1.1" width="12" height="16" aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z" />
+                                    </svg>
+                                    <a href="https://pinkguy233.github.io/post/hibernate/" class="text-bold flex-auto min-width-0 ">
+                                        <span class="repo js-pinnable-item" title="Hibernate搭建步骤">Hibernate搭建步骤</span>
+                                    </a>
+                                </div>
+                                1.导入相关的jar包 ![jar]()
+2.配置hibernate主配置  创建名字默认hibernate.cfg.xml
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;!DOCTYPE hibernate-configuration PUBLIC &quot;-//Hibernate/Hibernate Configuration DTD 3.0//EN&quot; &quot;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&quot;&gt; &lt;hibernate-configuration&gt; &lt;session-factory&gt; &lt;!-- 1.配置数据库信息 --&gt; &lt;!--必须有的 --&gt; &lt;property name=&quot;connection.url&quot;&gt; jdbc:oracle:thin:@192.168.206.1:1521:orcl &lt;/property&gt; &lt;property name=&quot;connection.driver_class&quot;&gt; oracle.jdbc.driver.OracleDriver &lt;/property&gt; &lt;property name=&quot;connection.username&quot;&gt;scott&lt;/property&gt;&lt;!-- 用户 --&gt; &lt;property name=&quot;connection.password&quot;&gt;333&lt;/property&gt;&lt;!-- 密码 --&gt; &lt;property name=&quot;dialect&quot;&gt; org.hibernate.dialect.ProgressDialect &lt;/property&gt; &lt;!-- 辅助文件 --&gt; &lt;property name=&quot;show_sql&quot;&gt;true&lt;/property&gt; &lt;!-- 输出底层sql语句 --&gt; &lt;property name=&quot;format_sql&quot;&gt;true&lt;/property&gt; &lt;!-- 输出底层sql语句格式 --&gt; &lt;!-- 添加映射文件 --&gt; &lt;mapping resource=&quot;dept.hbm.xml&quot;/&gt; &lt;/session-factory&gt; &lt;/hibernate-configuration&gt;   3.测试配置是否正常  工具类
+public class Hibernate { static SessionFactory factory; static Session session = null; static { Configuration cfg = new Configuration().
+                                <div class="f6 text-gray mt-2">
+                                    Updated <relative-time datetime="2019-11-29"
+                                        class="no-wrap" title="Modify at 2019/11/29">
+                                        November 29, 2019</relative-time>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="col-12 col-md-6 col-lg-6 mb-3 d-flex flex-content-stretch">
+                        <div
+                            class="Box pinned-item-list-item d-flex p-3 width-full js-pinned-item-list-item public source  sortable-button-item">
+                            <div class="pinned-item-list-item-content" name="pinned-post">
+                                <div class="d-flex width-full flex-items-center position-relative">
+                                    <svg class="octicon octicon-repo mr-2 text-gray flex-shrink-0" viewBox="0 0 12 16"
+                                        version="1.1" width="12" height="16" aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z" />
+                                    </svg>
+                                    <a href="https://pinkguy233.github.io/post/plsql/" class="text-bold flex-auto min-width-0 ">
+                                        <span class="repo js-pinnable-item" title="Plsql">Plsql</span>
+                                    </a>
+                                </div>
+                                &ndash; 来自PinkGuy
+ 输出语句
+dbms_output.put_line();   变量定义  普通定义  变量名在左边，数据类型在右边
+declare psex char(3) :='男'; begin end;   应用型变量，存放一个单元格的值  当不确定数据类型时候可以使用；
+左边变量名， 右边表名.字段名%type
+declare pname emp.ename%type; begin end;   记录型变量，存放一个对象  左边变量名， 右边表名.字段名%rowtype;
+declare emp_info emp%rowtype; begin end;  if语句  if
+declare begin if 条件 then -- 循环体 end if; end;  if..else
+declare begin if 条件 then -- 循环体 else -- 循环体 end if; end;  elseif
+                                <div class="f6 text-gray mt-2">
+                                    Updated <relative-time datetime="2019-11-27"
+                                        class="no-wrap" title="Modify at 2019/11/27">
+                                        November 27, 2019</relative-time>
                                 </div>
                             </div>
                         </div>
