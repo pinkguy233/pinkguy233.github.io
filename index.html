@@ -209,7 +209,8 @@
                                         <span class="repo js-pinnable-item" title="springboot整合">springboot整合</span>
                                     </a>
                                 </div>
-                                创建一个 Spring Initializr项目 （参照）   本文不使用application.properties文件 而使用更加简洁的application.yml文件。将resource文件夹下原有的application.properties文件删除，创建application.yml配置文件（备注：其实SpringBoot底层会把application.yml文件解析为application.properties），本文创建了两个yml文件（application.yml和application-dev.yml），分别来看一下内容  application.yml
+                                创建一个 Spring Initializr项目 （参照  ）
+ 本文不使用application.properties文件 而使用更加简洁的application.yml文件。将resource文件夹下原有的application.properties文件删除，创建application.yml配置文件（备注：其实SpringBoot底层会把application.yml文件解析为application.properties），本文创建了两个yml文件（application.yml和application-dev.yml），分别来看一下内容  application.yml
 spring: profiles: active: dev  application-dev.yml
 server: port: 8080 spring: datasource: username: root password: 333 url: jdbc:mysql://localhost:3306/smbms driver-class-name: com.mysql.jdbc.Driver mybatis: mapper-locations: classpath:mapper/*Mapper.xml type-aliases-package: com.example.ssm.entity   创建 对应的表，（用自己的就好） 创建包controller，entity，service，dao（习惯把数据层叫dao）。resources下创建mapper 文件夹，用于写sql语句； 直接贴代码  User.java (记得get set )
 public class User { private int id; private String userCode; private String userName; private String userPassword; }  UserDao.java
