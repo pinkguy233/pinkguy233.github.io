@@ -6,10 +6,60 @@
     <description>Recent content in Posts on PinkGuy主页</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Dec 2019 10:34:16 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 29 Dec 2019 13:40:50 +0800</lastBuildDate>
     
 	<atom:link href="https://pinkguy233.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Springboot thymeleaf模板</title>
+      <link>https://pinkguy233.github.io/post/springboot-web%E5%8A%A8%E6%80%81%E8%B5%84%E6%BA%90/</link>
+      <pubDate>Sun, 29 Dec 2019 13:40:50 +0800</pubDate>
+      
+      <guid>https://pinkguy233.github.io/post/springboot-web%E5%8A%A8%E6%80%81%E8%B5%84%E6%BA%90/</guid>
+      <description> ​ springboot默认不支持jsp
+​ 所以需要网页模板；推荐模板引擎 thymeleaf
+​ 网页 = 模板 + 数据
+引入thymeleaf  可以直接再创建时，将该选项勾上 或者后期加入该依赖；
+&amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.thymeleaf&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;thymeleaf-spring5&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.thymeleaf.extras&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;thymeleaf-extras-java8time&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt;   使用thymeleaf  上图得知只需将 html,放入类路径的templates中即可；   https://www.thymeleaf.org/documentation.html 使用文档地址 html文件导入命名空间
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html xmlns:th=&amp;quot;http://www.thymeleaf.org&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;Insert title here&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;p th:text=&amp;quot;${home.welcome}&amp;quot;&amp;gt;Welcome to our grocery store!&amp;lt;/p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;   </description>
+    </item>
+    
+    <item>
+      <title>Springboot Web静态资源</title>
+      <link>https://pinkguy233.github.io/post/springboot-web%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/</link>
+      <pubDate>Sun, 29 Dec 2019 11:04:50 +0800</pubDate>
+      
+      <guid>https://pinkguy233.github.io/post/springboot-web%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/</guid>
+      <description>springboot开发Web项目（静态资源 htm css js）
+​ springboot是一个jar，不能直接识别；
+​ 具体存放在 WebMvcAutoConfiguration中 addResourceHandlers方法指定（/webjars/）
+资源路径： ​ 也就是需要将静态文件 打包后，再引入；（方法比较麻烦，不推荐）
+ ​ spring boot约定：将资源放入指定的资源存放目录中；（推荐）
+&amp;quot;classpath:/META-INF/resources/&amp;quot;, //（classpath）类路径 &amp;quot;classpath:/resources/&amp;quot;, &amp;quot;classpath:/static/&amp;quot;, &amp;quot;classpath:/public/&amp;quot;   ​ - 以上路径直接访问，不需要加前缀
+设置欢迎页： ​ 在任意 资源文件夹里的 index.html 就是欢迎页；（直接域名访问）
+设置标签栏logo： ​ 网站中，网页标签的logo固定名字是：favicon.ico
+​ 自定义 favicon.ico，将它放入任意 资源文件里；
+自定义资源路径： ​ 在*application.proprestes*中
+spring.resources.static-locations=classpath:/res/,classpath:/resources/  ​ ps：*使用自定义资源目录后，之前的默认路径会失效*；
+&amp;ndash; end&amp;rsquo;
+​</description>
+    </item>
+    
+    <item>
+      <title>SpringMVC学习</title>
+      <link>https://pinkguy233.github.io/post/springmvc%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Sun, 29 Dec 2019 10:24:57 +0800</pubDate>
+      
+      <guid>https://pinkguy233.github.io/post/springmvc%E5%AD%A6%E4%B9%A0/</guid>
+      <description>[TOC]
+第一个SpringMVC框架  代码实现
+  创建Maven-webapp工程，pom.xml；
+&amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-webmvc&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.2.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt;  web.xml 添加拦截器
+&amp;lt;servlet&amp;gt; &amp;lt;servlet-name&amp;gt;dispatcherServlet&amp;lt;/servlet-name&amp;gt; &amp;lt;servlet-class&amp;gt;org.springframework.web.servlet.DispatcherServlet&amp;lt;/servlet-class&amp;gt; &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;contextConfigLocation&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;classpath:springmvc.xml&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt; &amp;lt;/servlet&amp;gt; &amp;lt;servlet-mapping&amp;gt; &amp;lt;servlet-name&amp;gt;dispatcherServlet&amp;lt;/servlet-name&amp;gt; &amp;lt;url-pattern&amp;gt;/&amp;lt;/url-pattern&amp;gt; &amp;lt;/servlet-mapping&amp;gt;  创建springmvc.xml (自动扫描不知道在哪个个包所以导入了全部)
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xmlns:context=&amp;quot;http://www.springframework.org/schema/context&amp;quot; xsi:schemaLocation=&amp;quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&amp;quot;&amp;gt; &amp;lt;!-- 自动扫描--&amp;gt; &amp;lt;context:component-scan base-package=&amp;quot;com.*&amp;quot;&amp;gt;&amp;lt;/context:component-scan&amp;gt; &amp;lt;!-- 视图解析器--&amp;gt; &amp;lt;bean class=&amp;quot;org.springframework.web.servlet.view.InternalResourceViewResolver&amp;quot;&amp;gt; &amp;lt;property name=&amp;quot;prefix&amp;quot; value=&amp;quot;/&amp;quot;&amp;gt;&amp;lt;/property&amp;gt; &amp;lt;property name=&amp;quot;suffix&amp;quot; value=&amp;quot;.jsp&amp;quot;&amp;gt;&amp;lt;/property&amp;gt; &amp;lt;/bean&amp;gt; &amp;lt;/beans&amp;gt;  创建controller
+package com.mvc.controller; import org.springframework.stereotype.Controller; import org.springframework.web.bind.annotation.RequestMapping; @Controller public class HelloHandler { @RequestMapping(&amp;quot;/index&amp;quot;) public String index(){ System.</description>
+    </item>
     
     <item>
       <title>springboot整合</title>
@@ -122,6 +172,25 @@ select rowid,rownum,s.stuname,s.stuage from stuInfo s  ROWID ROWNUM STUNAME STUA
       <description>前言： 程序当中有很多数据，每一个数据都是有相关的数据类型的，不同的数据类型占用空间的大小也不同.
 数据类型的作用是指导JVM运行程序的时候给该数据分配多大的内存空间。
 数据类型-介绍 java中的数据类型包括两种：  基本数据类型 引用数据类型 ###关于基本数据类型： 基本数据类型包括 四大类 八小种     第一类：整数型 第二类：浮点型     byte，short，int，long float,double       第三类：布尔型 第四类：字符型     boolean char    字符串属于==引用数据类型  字符串使用双引号“A”， 字符 使用双引号‘A’；  八种数据类型各自所占用空间大小是多少？    基本数据类型 占用空间大小【单位：字节】     byte 1   short 2   int 4   long 8   float 4   double 8   boolean 1   char 2    计算机在任何情况下只能识别二进制.</description>
+    </item>
+    
+    <item>
+      <title>SpringMVC学习</title>
+      <link>https://pinkguy233.github.io/post/springcloud%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pinkguy233.github.io/post/springcloud%E5%AD%A6%E4%B9%A0/</guid>
+      <description>[TOC]
+单体应用存在的问题（为什么要用SpringCloud）  随着业务的发展，开发变得越来越复杂。 修改，新增某个功能，需要对整个系统进行测试，部署。 一个模块出现问题，很可能导致整个系统的崩溃。 开发团队同时对数据进行管理，容易产生安全漏洞。 各个模块使用同一种技术进行开发，各个模块很难根据实际的情况选择更适合的技术框架，局限性很大/ 模块内容过于复杂，如果员工离职，交接难度，所需时间提升很大。  分布式，集群
+集群：一台服务器无法承受高负荷并发的数据访问量，那就开十台服务器，十台不够就开一百台（物理层面）。很多人干同一件事情，来分担压力。
+分布式：将一个复杂的问题差分成若干个小问题，将一个大型的项目拆分成若干个微服务来协同完成（软件设计层面）。将一个庞大的工作拆分成若干个小步骤，交给不同的人员来做，最后将所有结果整合实现大的需求。
+服务治理的核型分为三部分：*注册中心*，*服务提供者*，*服务消费者*。
+再分布式系统中，每个微服务启动时，将自己的信息储存到注册中心，这叫服务注册。
+服务消费者通过注册中心获取到服务提供者的网络信息，通过该信息调用服务，这叫服务发现。
+Spring Cloud Eureka  Eureka Server, 注册中心；
+ Eureka Client，所有需要进行注册的微服务通过 Eureka Client来连接到Eureka Server进行注册；
+  Eureka Server（注册中心）代码实现  创建一个父工程，pom.xml如下：
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xsi:schemaLocation=&amp;quot;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&amp;quot;&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; &amp;lt;packaging&amp;gt;pom&amp;lt;/packaging&amp;gt; &amp;lt;modules&amp;gt; &amp;lt;module&amp;gt;eurekaaservice&amp;lt;/module&amp;gt; &amp;lt;module&amp;gt;eurekaclicent&amp;lt;/module&amp;gt; &amp;lt;/modules&amp;gt; &amp;lt;parent&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.2.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;relativePath/&amp;gt; &amp;lt;!-- lookup parent from repository --&amp;gt; &amp;lt;/parent&amp;gt; &amp;lt;groupId&amp;gt;com.xxh&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;aispringcloud3&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.0.1-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;name&amp;gt;aispringcloud3&amp;lt;/name&amp;gt; &amp;lt;description&amp;gt;Demo project for Spring Boot&amp;lt;/description&amp;gt; &amp;lt;properties&amp;gt; &amp;lt;java.</description>
     </item>
     
   </channel>

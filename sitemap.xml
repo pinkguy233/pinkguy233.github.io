@@ -4,12 +4,27 @@
   
   <url>
     <loc>https://pinkguy233.github.io/</loc>
-    <lastmod>2019-12-25T10:34:16+08:00</lastmod>
+    <lastmod>2019-12-29T13:40:50+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://pinkguy233.github.io/post/</loc>
-    <lastmod>2019-12-25T10:34:16+08:00</lastmod>
+    <lastmod>2019-12-29T13:40:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pinkguy233.github.io/post/springboot-web%E5%8A%A8%E6%80%81%E8%B5%84%E6%BA%90/</loc>
+    <lastmod>2019-12-29T13:40:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pinkguy233.github.io/post/springboot-web%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/</loc>
+    <lastmod>2019-12-29T11:04:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pinkguy233.github.io/post/springmvc%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2019-12-29T10:24:57+08:00</lastmod>
   </url>
   
   <url>
@@ -64,6 +79,10 @@
   
   <url>
     <loc>https://pinkguy233.github.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pinkguy233.github.io/post/springcloud%E5%AD%A6%E4%B9%A0/</loc>
   </url>
   
   <url>

@@ -178,7 +178,7 @@
             <a class="UnderlineNav-item mr-0 mr-md-1 mr-lg-3 " href="https://pinkguy233.github.io/posts/">
                 Posts
                 <span class="Counter hide-lg hide-md hide-sm">
-                    9
+                    13
                 </span>
             </a>
             <a class="UnderlineNav-item mr-0 mr-md-1 mr-lg-3 " href="https://pinkguy233.github.io/about/">
@@ -194,6 +194,101 @@
                 </h2>
 
                 <ol class="d-flex flex-wrap list-style-none gutter-condensed mb-4 js-pinned-items-reorder-list">
+                    
+                    <li class="col-12 col-md-6 col-lg-6 mb-3 d-flex flex-content-stretch">
+                        <div
+                            class="Box pinned-item-list-item d-flex p-3 width-full js-pinned-item-list-item public source  sortable-button-item">
+                            <div class="pinned-item-list-item-content" name="pinned-post">
+                                <div class="d-flex width-full flex-items-center position-relative">
+                                    <svg class="octicon octicon-repo mr-2 text-gray flex-shrink-0" viewBox="0 0 12 16"
+                                        version="1.1" width="12" height="16" aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z" />
+                                    </svg>
+                                    <a href="https://pinkguy233.github.io/post/springboot-web%E5%8A%A8%E6%80%81%E8%B5%84%E6%BA%90/" class="text-bold flex-auto min-width-0 ">
+                                        <span class="repo js-pinnable-item" title="Springboot thymeleaf模板">Springboot thymeleaf模板</span>
+                                    </a>
+                                </div>
+                                 ​ springboot默认不支持jsp
+​ 所以需要网页模板；推荐模板引擎 thymeleaf
+​ 网页 = 模板 + 数据
+引入thymeleaf  可以直接再创建时，将该选项勾上 或者后期加入该依赖；
+&lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.thymeleaf&lt;/groupId&gt; &lt;artifactId&gt;thymeleaf-spring5&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.thymeleaf.extras&lt;/groupId&gt; &lt;artifactId&gt;thymeleaf-extras-java8time&lt;/artifactId&gt; &lt;/dependency&gt; &lt;/dependencies&gt;   使用thymeleaf  上图得知只需将 html,放入类路径的templates中即可；   https://www.thymeleaf.org/documentation.html 使用文档地址 html文件导入命名空间
+&lt;!DOCTYPE html&gt; &lt;html xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;Insert title here&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;p th:text=&quot;${home.welcome}&quot;&gt;Welcome to our grocery store!&lt;/p&gt; &lt;/body&gt; &lt;/html&gt;   
+                                <div class="f6 text-gray mt-2">
+                                    Updated <relative-time datetime="2019-12-29"
+                                        class="no-wrap" title="Modify at 2019/12/29">
+                                        December 29, 2019</relative-time>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="col-12 col-md-6 col-lg-6 mb-3 d-flex flex-content-stretch">
+                        <div
+                            class="Box pinned-item-list-item d-flex p-3 width-full js-pinned-item-list-item public source  sortable-button-item">
+                            <div class="pinned-item-list-item-content" name="pinned-post">
+                                <div class="d-flex width-full flex-items-center position-relative">
+                                    <svg class="octicon octicon-repo mr-2 text-gray flex-shrink-0" viewBox="0 0 12 16"
+                                        version="1.1" width="12" height="16" aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z" />
+                                    </svg>
+                                    <a href="https://pinkguy233.github.io/post/springboot-web%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/" class="text-bold flex-auto min-width-0 ">
+                                        <span class="repo js-pinnable-item" title="Springboot Web静态资源">Springboot Web静态资源</span>
+                                    </a>
+                                </div>
+                                springboot开发Web项目（静态资源 htm css js）
+​ springboot是一个jar，不能直接识别；
+​ 具体存放在 WebMvcAutoConfiguration中 addResourceHandlers方法指定（/webjars/）
+资源路径： ​ 也就是需要将静态文件 打包后，再引入；（方法比较麻烦，不推荐）
+ ​ spring boot约定：将资源放入指定的资源存放目录中；（推荐）
+&quot;classpath:/META-INF/resources/&quot;, //（classpath）类路径 &quot;classpath:/resources/&quot;, &quot;classpath:/static/&quot;, &quot;classpath:/public/&quot;   ​ - 以上路径直接访问，不需要加前缀
+设置欢迎页： ​ 在任意 资源文件夹里的 index.html 就是欢迎页；（直接域名访问）
+设置标签栏logo： ​ 网站中，网页标签的logo固定名字是：favicon.ico
+​ 自定义 favicon.ico，将它放入任意 资源文件里；
+自定义资源路径： ​ 在*application.proprestes*中
+spring.resources.static-locations=classpath:/res/,classpath:/resources/  ​ ps：*使用自定义资源目录后，之前的默认路径会失效*；
+&ndash; end&rsquo;
+​
+                                <div class="f6 text-gray mt-2">
+                                    Updated <relative-time datetime="2019-12-29"
+                                        class="no-wrap" title="Modify at 2019/12/29">
+                                        December 29, 2019</relative-time>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="col-12 col-md-6 col-lg-6 mb-3 d-flex flex-content-stretch">
+                        <div
+                            class="Box pinned-item-list-item d-flex p-3 width-full js-pinned-item-list-item public source  sortable-button-item">
+                            <div class="pinned-item-list-item-content" name="pinned-post">
+                                <div class="d-flex width-full flex-items-center position-relative">
+                                    <svg class="octicon octicon-repo mr-2 text-gray flex-shrink-0" viewBox="0 0 12 16"
+                                        version="1.1" width="12" height="16" aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z" />
+                                    </svg>
+                                    <a href="https://pinkguy233.github.io/post/springmvc%E5%AD%A6%E4%B9%A0/" class="text-bold flex-auto min-width-0 ">
+                                        <span class="repo js-pinnable-item" title="SpringMVC学习">SpringMVC学习</span>
+                                    </a>
+                                </div>
+                                [TOC]
+第一个SpringMVC框架  代码实现
+  创建Maven-webapp工程，pom.xml；
+&lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt; &lt;version&gt;5.2.2.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;/dependencies&gt;  web.xml 添加拦截器
+&lt;servlet&gt; &lt;servlet-name&gt;dispatcherServlet&lt;/servlet-name&gt; &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt; &lt;init-param&gt; &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt; &lt;param-value&gt;classpath:springmvc.xml&lt;/param-value&gt; &lt;/init-param&gt; &lt;/servlet&gt; &lt;servlet-mapping&gt; &lt;servlet-name&gt;dispatcherServlet&lt;/servlet-name&gt; &lt;url-pattern&gt;/&lt;/url-pattern&gt; &lt;/servlet-mapping&gt;  创建springmvc.xml (自动扫描不知道在哪个个包所以导入了全部)
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:context=&quot;http://www.springframework.org/schema/context&quot; xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt; &lt;!-- 自动扫描--&gt; &lt;context:component-scan base-package=&quot;com.*&quot;&gt;&lt;/context:component-scan&gt; &lt;!-- 视图解析器--&gt; &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt; &lt;property name=&quot;prefix&quot; value=&quot;/&quot;&gt;&lt;/property&gt; &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;&gt;&lt;/property&gt; &lt;/bean&gt; &lt;/beans&gt;  创建controller
+package com.mvc.controller; import org.springframework.stereotype.Controller; import org.springframework.web.bind.annotation.RequestMapping; @Controller public class HelloHandler { @RequestMapping(&quot;/index&quot;) public String index(){ System.
+                                <div class="f6 text-gray mt-2">
+                                    Updated <relative-time datetime="2019-12-29"
+                                        class="no-wrap" title="Modify at 2019/12/29">
+                                        December 29, 2019</relative-time>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     
                     <li class="col-12 col-md-6 col-lg-6 mb-3 d-flex flex-content-stretch">
                         <div
@@ -274,89 +369,6 @@ public class User { private int id; private String userCode; private String user
                                     Updated <relative-time datetime="2019-12-23"
                                         class="no-wrap" title="Modify at 2019/12/23">
                                         December 23, 2019</relative-time>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    
-                    <li class="col-12 col-md-6 col-lg-6 mb-3 d-flex flex-content-stretch">
-                        <div
-                            class="Box pinned-item-list-item d-flex p-3 width-full js-pinned-item-list-item public source  sortable-button-item">
-                            <div class="pinned-item-list-item-content" name="pinned-post">
-                                <div class="d-flex width-full flex-items-center position-relative">
-                                    <svg class="octicon octicon-repo mr-2 text-gray flex-shrink-0" viewBox="0 0 12 16"
-                                        version="1.1" width="12" height="16" aria-hidden="true">
-                                        <path fill-rule="evenodd"
-                                            d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z" />
-                                    </svg>
-                                    <a href="https://pinkguy233.github.io/post/ssh%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4/" class="text-bold flex-auto min-width-0 ">
-                                        <span class="repo js-pinnable-item" title="Ssh框架搭建步骤">Ssh框架搭建步骤</span>
-                                    </a>
-                                </div>
-                                 1.导入相关jar包  hibaernate spring hibernate+spring 连接池(ommons-dbcp) struts2 struts2+spring 数据库驱动 servlet-api(看情况)  2.配置hibernate并测试 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;!DOCTYPE hibernate-configuration PUBLIC &quot;-//Hibernate/Hibernate Configuration DTD 3.0//EN&quot; &quot;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&quot;&gt; &lt;hibernate-configuration&gt; &lt;session-factory&gt; &lt;property name=&quot;connection.driver_class&quot;&gt; oracle.jdbc.OracleDriver &lt;/property&gt; &lt;property name=&quot;connection.url&quot;&gt; jdbc:oracle:thin:@192.168.206.1:1521:orcl &lt;/property&gt; &lt;property name=&quot;connection.username&quot;&gt;scott&lt;/property&gt; &lt;property name=&quot;connection.password&quot;&gt;333&lt;/property&gt; &lt;property name=&quot;dialect&quot;&gt; org.hibernate.dialect.Oracle10gDialect &lt;/property&gt; &lt;/session-factory&gt; &lt;/hibernate-configuration&gt;   再写个工具类测试  3.将 hibernate 关联到 spring 并测试 &lt;!-- 关联hibernate配置文件 --&gt; &lt;bean id=&quot;sessionFactory&quot; class=&quot;org.springframework.orm.hibernate3.LocalSessionFactoryBean&quot;&gt; &lt;property name=&quot;configLocation&quot;&gt; &lt;value&gt;classpath:hibernate.cfg.xml&lt;/value&gt; &lt;/property&gt; &lt;/bean&gt;  4.配置Struts2 
-                                <div class="f6 text-gray mt-2">
-                                    Updated <relative-time datetime="2019-12-13"
-                                        class="no-wrap" title="Modify at 2019/12/13">
-                                        December 13, 2019</relative-time>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    
-                    <li class="col-12 col-md-6 col-lg-6 mb-3 d-flex flex-content-stretch">
-                        <div
-                            class="Box pinned-item-list-item d-flex p-3 width-full js-pinned-item-list-item public source  sortable-button-item">
-                            <div class="pinned-item-list-item-content" name="pinned-post">
-                                <div class="d-flex width-full flex-items-center position-relative">
-                                    <svg class="octicon octicon-repo mr-2 text-gray flex-shrink-0" viewBox="0 0 12 16"
-                                        version="1.1" width="12" height="16" aria-hidden="true">
-                                        <path fill-rule="evenodd"
-                                            d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z" />
-                                    </svg>
-                                    <a href="https://pinkguy233.github.io/post/hibernate/" class="text-bold flex-auto min-width-0 ">
-                                        <span class="repo js-pinnable-item" title="Hibernate搭建步骤">Hibernate搭建步骤</span>
-                                    </a>
-                                </div>
-                                1.导入相关的jar包 ![jar]()
-2.配置hibernate主配置  创建名字默认hibernate.cfg.xml
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;!DOCTYPE hibernate-configuration PUBLIC &quot;-//Hibernate/Hibernate Configuration DTD 3.0//EN&quot; &quot;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&quot;&gt; &lt;hibernate-configuration&gt; &lt;session-factory&gt; &lt;!-- 1.配置数据库信息 --&gt; &lt;!--必须有的 --&gt; &lt;property name=&quot;connection.url&quot;&gt; jdbc:oracle:thin:@192.168.206.1:1521:orcl &lt;/property&gt; &lt;property name=&quot;connection.driver_class&quot;&gt; oracle.jdbc.driver.OracleDriver &lt;/property&gt; &lt;property name=&quot;connection.username&quot;&gt;scott&lt;/property&gt;&lt;!-- 用户 --&gt; &lt;property name=&quot;connection.password&quot;&gt;333&lt;/property&gt;&lt;!-- 密码 --&gt; &lt;property name=&quot;dialect&quot;&gt; org.hibernate.dialect.ProgressDialect &lt;/property&gt; &lt;!-- 辅助文件 --&gt; &lt;property name=&quot;show_sql&quot;&gt;true&lt;/property&gt; &lt;!-- 输出底层sql语句 --&gt; &lt;property name=&quot;format_sql&quot;&gt;true&lt;/property&gt; &lt;!-- 输出底层sql语句格式 --&gt; &lt;!-- 添加映射文件 --&gt; &lt;mapping resource=&quot;dept.hbm.xml&quot;/&gt; &lt;/session-factory&gt; &lt;/hibernate-configuration&gt;   3.测试配置是否正常  工具类
-public class Hibernate { static SessionFactory factory; static Session session = null; static { Configuration cfg = new Configuration().
-                                <div class="f6 text-gray mt-2">
-                                    Updated <relative-time datetime="2019-11-29"
-                                        class="no-wrap" title="Modify at 2019/11/29">
-                                        November 29, 2019</relative-time>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    
-                    <li class="col-12 col-md-6 col-lg-6 mb-3 d-flex flex-content-stretch">
-                        <div
-                            class="Box pinned-item-list-item d-flex p-3 width-full js-pinned-item-list-item public source  sortable-button-item">
-                            <div class="pinned-item-list-item-content" name="pinned-post">
-                                <div class="d-flex width-full flex-items-center position-relative">
-                                    <svg class="octicon octicon-repo mr-2 text-gray flex-shrink-0" viewBox="0 0 12 16"
-                                        version="1.1" width="12" height="16" aria-hidden="true">
-                                        <path fill-rule="evenodd"
-                                            d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z" />
-                                    </svg>
-                                    <a href="https://pinkguy233.github.io/post/plsql/" class="text-bold flex-auto min-width-0 ">
-                                        <span class="repo js-pinnable-item" title="Plsql">Plsql</span>
-                                    </a>
-                                </div>
-                                &ndash; 来自PinkGuy
- 输出语句
-dbms_output.put_line();   变量定义  普通定义  变量名在左边，数据类型在右边
-declare psex char(3) :='男'; begin end;   应用型变量，存放一个单元格的值  当不确定数据类型时候可以使用；
-左边变量名， 右边表名.字段名%type
-declare pname emp.ename%type; begin end;   记录型变量，存放一个对象  左边变量名， 右边表名.字段名%rowtype;
-declare emp_info emp%rowtype; begin end;  if语句  if
-declare begin if 条件 then -- 循环体 end if; end;  if..else
-declare begin if 条件 then -- 循环体 else -- 循环体 end if; end;  elseif
-                                <div class="f6 text-gray mt-2">
-                                    Updated <relative-time datetime="2019-11-27"
-                                        class="no-wrap" title="Modify at 2019/11/27">
-                                        November 27, 2019</relative-time>
                                 </div>
                             </div>
                         </div>

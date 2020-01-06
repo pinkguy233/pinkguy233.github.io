@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <link crossorigin="anonymous" media="all"
+        rel="stylesheet"
+        href="https://pinkguy233.github.io/css/frameworks.css" />
+    <link crossorigin="anonymous" media="all"
+        rel="stylesheet" href="https://pinkguy233.github.io/css/github.css" />
+    <meta name="viewport" content="width=device-width">
+
+    <title>SpringMVC学习 - PinkGuy主页</title>
+
+    <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://pinkguy233.github.io/images/favicon.ico">
+    <meta name="theme-color" content="#1e2327">
+    
+</head>
+
+<body class="env-production emoji-size-boost page-responsive page-profile">
+  <div class="position-relative js-header-wrapper ">
+    <span class="Progress progress-pjax-loader position-fixed width-full js-pjax-loader-bar">
+        <span class="progress-pjax-loader-bar top-0 left-0" style="width: 0%;"></span>
+    </span>
+    <header class="Header js-details-container Details flex-wrap flex-lg-nowrap p-responsive" role="banner">
+        <div class="Header-item d-none d-lg-flex">
+            <a class="Header-link" href="https://pinkguy233.github.io/" aria-label="Homepage"
+                data-ga-click="Header, go to dashboard, icon:logo">
+                <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1"
+                    width="32" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+            </a>
+        </div>
+        <div
+            class="Header-item Header-item--full flex-column flex-lg-row width-full flex-order-2 flex-lg-order-none mr-0 mr-lg-3 mt-3 mt-lg-0 Details-content--hidden">
+            <div class="header-search flex-self-stretch flex-lg-self-auto mr-0 mr-lg-3 mb-3 mb-lg-0 scoped-search site-scoped-search js-site-search position-relative js-jump-to"
+                role="combobox" aria-owns="jump-to-results" aria-label="Search or jump to" aria-haspopup="listbox"
+                aria-expanded="false">
+                <div class="position-relative">
+                </div>
+            </div>
+        </div>
+        <div class="Header-item Header-item--full flex-justify-center d-lg-none position-relative" style="margin-right: auto;">
+            <a class="Header-link" href="https://pinkguy233.github.io/" aria-label="Homepage"
+                data-ga-click="Header, go to dashboard, icon:logo">
+                <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1"
+                    width="32" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+            </a>
+        </div>
+        <div class="Header-item position-relative mr-0 d-none d-lg-flex">
+            <details class="details-overlay details-reset">
+                <summary class="Header-link" aria-label="View profile and more"
+                    data-ga-click="Header, show menu, icon:avatar">
+                    
+                    <img alt="" class="avatar" src="https://pinkguy233.github.io/images/avatar.png" height="20" width="20">
+                    
+                </summary>
+            </details>
+        </div>
+    </header>
+</div>
+
+<div id="start-of-content" class="show-on-focus"></div>
+<div id="js-flash-container">
+</div>
+
+  
+<div class="application-main " data-commit-hovercards-enabled="">
+    <div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="">
+        <main id="js-repo-pjax-container" data-pjax-container="">
+            <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav pt-0 pt-lg-4 ">
+                <div class="repohead-details-container clearfix container-lg p-responsive d-none d-lg-block">
+                    <div class="mb-3 d-flex">
+                        <h1 class="public css-truncate float-none flex-auto width-fit pl-0">
+                            <a class="avatar mr-1" href="https://pinkguy233.github.io/about/">
+                            
+                                <img
+                                    src="https://pinkguy233.github.io/images/avatar.png" width="26" height="26">
+                            
+                            </a>
+                            <span class="author"><a
+                                    href="https://pinkguy233.github.io/">PinkGuy</a></span>
+                            <span class="path-divider">/</span>
+                            <strong itemprop="name" class="css-truncate-target" style="max-width: 410px"><a
+                                    href="https://pinkguy233.github.io/post/springmvc%E5%AD%A6%E4%B9%A0/">SpringMVC学习</a></strong>
+
+                            <div class="d-block text-small text-gray">
+                                Created <time-ago datetime="2019-12-29" class="no-wrap"
+                                    title="Created at 2019/12/29">
+                                    2019-12-29</time-ago>
+                                <span class="file-info-divider"></span>
+                                Modifyd <time-ago datetime="2019-12-29" class="no-wrap"
+                                    title="Modifyd at 2019/12/29">
+                                    2019-12-29</time-ago>
+                            </div>
+                        </h1>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="container-lg clearfix new-discussion-timeline experiment-repo-nav  p-responsive">
+                <div class="repository-content ">
+                    <div class="Box mt-3 position-relative">
+                        <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
+                            <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                                3425 Words
+                                
+                            </div>
+                        </div>
+
+                        <div id="readme" class="Box-body readme blob instapaper_body js-code-block-container">
+                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text">
+
+<p>[TOC]</p>
+
+<h4 id="第一个springmvc框架">第一个SpringMVC框架</h4>
+
+<blockquote>
+<p>代码实现</p>
+</blockquote>
+
+<ul>
+<li><p>创建Maven-webapp工程，pom.xml；</p>
+
+<pre><code class="language-xml">&lt;dependencies&gt;
+
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
+  &lt;version&gt;5.2.2.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;/dependencies&gt;
+</code></pre></li>
+
+<li><p>web.xml 添加拦截器</p>
+
+<pre><code class="language-xml">&lt;servlet&gt;
+&lt;servlet-name&gt;dispatcherServlet&lt;/servlet-name&gt;
+&lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+
+&lt;init-param&gt;
+  &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+  &lt;param-value&gt;classpath:springmvc.xml&lt;/param-value&gt;
+&lt;/init-param&gt;
+
+&lt;/servlet&gt;
+  
+    
+&lt;servlet-mapping&gt;
+&lt;servlet-name&gt;dispatcherServlet&lt;/servlet-name&gt;
+&lt;url-pattern&gt;/&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+</code></pre></li>
+
+<li><p>创建springmvc.xml (自动扫描不知道在哪个个包所以导入了全部)</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+   xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+   xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+   xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;
+
+&lt;!--    自动扫描--&gt;
+&lt;context:component-scan base-package=&quot;com.*&quot;&gt;&lt;/context:component-scan&gt;
+
+&lt;!--    视图解析器--&gt;
+&lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+    &lt;property name=&quot;prefix&quot; value=&quot;/&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;&gt;&lt;/property&gt;
+&lt;/bean&gt;
+
+&lt;/beans&gt;
+</code></pre></li>
+
+<li><p>创建controller</p>
+
+<pre><code class="language-java">package com.mvc.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class HelloHandler {
+
+@RequestMapping(&quot;/index&quot;)
+public String index(){
+    System.out.println(&quot;进入了//&quot;);
+    return &quot;index&quot;;
+}
+
+}
+</code></pre></li>
+</ul>
+
+<h4 id="spring-mvc注解">Spring MVC注解</h4>
+
+<h5 id="requestmapping">@RequestMapping</h5>
+
+<p>Sprng MVC 通过 @RequestMapping 注解将 URL 请求与业务方法进行映射，在Handler 的类定义处和方法处都可以添加 RequestMapping , 在类定义处添加，相当于客户端多了一层访问路径。</p>
+
+<h5 id="controller">@Controller</h5>
+
+<p>@Controller 在类处定义添加，将该类交给 IoC 容器进行管理（结合 springmvc.xml 的自动扫描食用），同时将它成为一个控制器，可以接收客户端请求</p>
+
+<pre><code class="language-java">package com.mvc.controller;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class HelloHandler {
+
+    @RequestMapping(&quot;/index&quot;)
+    public String index(){
+        System.out.println(&quot;进入了//&quot;);
+        return &quot;index&quot;;
+    }
+
+}
+</code></pre>
+
+<blockquote>
+<p>@RequestMapping 的相关参数</p>
+</blockquote>
+
+<p><code>value</code> : 指定 URL 请求的实际地址， 是 @RequestMapping 的默认值。</p>
+
+<pre><code class="language-java">@RequestMapping(value = &quot;/index&quot;)
+public String index(){
+    System.out.println(&quot;进入了//&quot;);
+    return &quot;index&quot;;
+}
+</code></pre>
+
+<p><code>method</code>：指定请求的类型，GET,POST,PUT,DELET;</p>
+
+<pre><code class="language-java">@RequestMapping(value = &quot;/test&quot;,method = RequestMethod.GET)
+public String test(){
+    System.out.println(&quot;进入了//&quot;);
+    return &quot;index&quot;;
+}
+</code></pre>
+
+<p>上述代码只能接收GET请求;</p>
+
+<p><code>params</code>: 指定请求必须包含某些参数,否则无法调用该方法;</p>
+
+<pre><code class="language-java">@RequestMapping(value = &quot;/test&quot;,method = RequestMethod.GET,params = {&quot;name&quot;,&quot;id=10&quot;})
+public String test(String name,int id){
+    System.out.println(name);
+    System.out.println(id);
+    System.out.println(&quot;进入了//&quot;);
+    return &quot;index&quot;;
+}
+</code></pre>
+
+<p>以上表示 接收请求必须包含 name,id值,且id值必须等于10;</p>
+
+<p><code>@PathVariable</code>: 传入的参数与实参不一致时,使用该方法绑定</p>
+
+<pre><code class="language-java">@RequestMapping(value = &quot;/test&quot;,method = RequestMethod.GET,params = {&quot;name&quot;,&quot;id=10&quot;})
+public String test(@PathVariable(&quot;name&quot;) String qwq,@PathVariable(&quot;id&quot;) int qvq){
+    System.out.println(qwq);
+    System.out.println(qvq);
+    System.out.println(&quot;进入了//&quot;);
+    return &quot;index&quot;;
+}
+</code></pre>
+
+<p>Spring MVC 使用RESTful 风格的 URL;</p>
+
+<p>传统类型:  <a href="http://localhost:8080/aispringmvc_war/test?name=zhansan&amp;id=10">http://localhost:8080/aispringmvc_war/test?name=zhansan&amp;id=10</a></p>
+
+<p>REST :  <a href="http://localhost:8080/aispringmvc_war/hello/test/ningling/15">http://localhost:8080/aispringmvc_war/hello/test/ningling/15</a></p>
+
+<pre><code class="language-java">@RequestMapping(value = &quot;/test/{name}/{id}&quot;)
+public String test(@PathVariable(&quot;name&quot;) String qwq,@PathVariable(&quot;id&quot;) int qvq){
+    System.out.println(qwq);
+    System.out.println(qvq);
+    System.out.println(&quot;进入了//&quot;);
+    return &quot;index&quot;;
+}
+
+</code></pre>
+
+<h4 id="spring-mvc-数据绑定">Spring MVC 数据绑定</h4>
+
+<p>数据绑定：在后端的业务方法中直接通过获取客户端HTTP请求中的参数，将请求参数映射到业务方法当中去，Spring MVC 中数据绑定的工作是由 HandlerAdpter 来完成的。</p>
+
+<h5 id="基本数据类型">基本数据类型</h5>
+
+<pre><code class="language-java">@ResponseBody
+@RequestMapping(&quot;/test&quot;)
+public String test(int id){
+    System.out.println(&quot;进入test&quot;);
+    return &quot;&quot;+id;
+}
+</code></pre>
+
+<p>发送请求 <a href="http://localhost:8080/aispringmvc_war/Date/test?id=18">http://localhost:8080/aispringmvc_war/Date/test?id=18</a></p>
+
+<p>当id值为null时会报错</p>
+
+<h5 id="包装类-integer">包装类 Integer</h5>
+
+<pre><code class="language-java">@ResponseBody
+@RequestMapping(&quot;/test&quot;)
+public String test(Interg id){
+    System.out.println(&quot;进入test&quot;);
+    return &quot;&quot;+id;
+}
+</code></pre>
+
+<p>发送请求 <a href="http://localhost:8080/aispringmvc_war/Date/test1?id=18">http://localhost:8080/aispringmvc_war/Date/test1?id=18</a></p>
+
+<p>当id值为null时，返回页面显示null；</p>
+
+<ul>
+<li>@RequestParam</li>
+</ul>
+
+<p>value = “num”：将HTTP 请求中名为 num 的参数赋给形参。</p>
+
+<p>requried：设置 num 是否必须填写，true 表示必填，false 表示非必填，可省略。</p>
+
+<p>defaultValue = “0”：如果HTTP 请求中没有 num 参数，默认值为0。</p>
+
+<pre><code class="language-java">@ResponseBody
+@RequestMapping(&quot;/test2&quot;)
+public String test2(@RequestParam(value = &quot;num&quot;,required = true,defaultValue = &quot;10&quot;) Integer id){
+    System.out.println(&quot;进入test1&quot;);
+    return &quot;&quot;+id;
+}
+
+</code></pre>
+
+<h5 id="数据绑定-list">数据绑定 List</h5>
+
+<p>Spring MVC 不支持 LIst 类型的直接转换，需要对List 集合进行封装。</p>
+
+<blockquote>
+<p>代码演示</p>
+</blockquote>
+
+<ul>
+<li><p>集合封装类</p>
+
+<pre><code class="language-java">package com.mvc.entity;
+
+import java.util.List;
+
+public class UserList {
+
+private List&lt;User&gt; UserList;
+}
+</code></pre></li>
+
+<li><p>jsp页面</p>
+
+<pre><code class="language-jsp">&lt;form action=&quot;date/list&quot; method=&quot;post&quot;&gt;
+&lt;input type=&quot;text&quot; name=&quot;UserList[0].id&quot;&gt;&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;UserList[0].name&quot;&gt;&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;UserList[1].id&quot;&gt;&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;UserList[1].name&quot;&gt;&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;UserList[2].id&quot;&gt;&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;UserList[2].name&quot;&gt;&lt;br&gt;
+&lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
+&lt;/form&gt;
+</code></pre></li>
+
+<li><p>controller 业务方法</p>
+
+<pre><code class="language-java">@ResponseBody
+@RequestMapping(value = &quot;/list&quot;,method = RequestMethod.POST)
+public String list(UserList list){
+
+StringBuffer sb = new StringBuffer();
+for (User u : list.getUserList())
+    sb.append(u.toString());
+
+return sb.toString();
+}
+
+</code></pre></li>
+</ul>
+
+<h5 id="绑定json对象">*绑定json对象</h5>
+
+<ul>
+<li><p>jsp页面引入 js，发送 json 请求</p>
+
+<pre><code class="language-js">&lt;script src=&quot;js/jquery-3.1.1.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+
+$(function () {
+    alert(&quot;123&quot;);
+
+    var user = {
+        &quot;id&quot;:&quot;1&quot;,
+        &quot;name&quot;:&quot;张三&quot;
+    };
+
+    $.ajax({
+        url:&quot;date/json&quot;,
+        data:JSON.stringify(user),
+        type:&quot;POST&quot;,
+        contentType:&quot;applicaton/json;charset=UTF-8&quot;,
+        dataType:&quot;JSON&quot;,
+        success:function (data) {
+            alert(data.id+&quot;-----&quot;+data.name);
+        }
+    })
+
+
+})
+
+&lt;/script&gt;
+</code></pre></li>
+
+<li><p>设置web.xml 过滤器，不拦截 js 请求</p>
+
+<pre><code class="language-xml">&lt;servlet-mapping&gt;
+&lt;servlet-name&gt;default&lt;/servlet-name&gt;
+&lt;url-pattern&gt;*.js&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+</code></pre></li>
+
+<li><p>添加 fastjson 依赖</p>
+
+<pre><code class="language-xml">&lt;dependency&gt;
+&lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+&lt;artifactId&gt;fastjson&lt;/artifactId&gt;
+&lt;version&gt;1.2.32&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre></li>
+
+<li><p>springmvc.xml 配置fastjson</p>
+
+<pre><code class="language-xml">
+&lt;mvc:annotation-driven&gt;
+&lt;mvc:message-converters register-defaults=&quot;true&quot;&gt;
+    &lt;!--    消息转换器，解决@ResponseBoyd 中文乱码--&gt;
+    &lt;bean class=&quot;org.springframework.http.converter.StringHttpMessageConverter&quot;&gt;
+        &lt;property name=&quot;supportedMediaTypes&quot; value=&quot;text/html;charset=UTF-8&quot;/&gt;
+    &lt;/bean&gt;
+
+    &lt;!-- 配置fastjosn--&gt;
+    &lt;bean class=&quot;com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter4&quot;/&gt;
+&lt;/mvc:message-converters&gt;
+&lt;/mvc:annotation-driven&gt;
+
+</code></pre></li>
+
+<li><p>controller</p>
+
+<pre><code class="language-java">@ResponseBody
+@RequestMapping(&quot;/json&quot;)
+public User json(User user){
+System.out.println(user.toString());
+user.setId(4);
+user.setName(&quot;狗子&quot;);
+
+return user;
+}
+</code></pre></li>
+</ul>
+
+<hr />
+
+<h4 id="spring-mvc-模型数据解析">Spring MVC 模型数据解析</h4>
+
+<p>JSP 四大作用域对象：爬个Content，request，session，application。</p>
+
+<p>模型数据的绑定 是由 ViewResolver 完成的，实际开发中，需要先添加模型数据，再交个给 ViewResolver  来绑定。</p>
+
+<p>Spring MVC 提供了以下几种方式添加模型数据：</p>
+
+<ul>
+<li>Map</li>
+<li>Model</li>
+<li>ModelAndView</li>
+<li>@ModolAttribute</li>
+<li>@SessionAttribute</li>
+</ul>
+
+<blockquote>
+<p>代码演示</p>
+</blockquote>
+
+<h5 id="将模型数据存到-request中">将模型数据存到 request中</h5>
+
+<p>1，Map</p>
+
+<ul>
+<li><p>jsp 页面</p>
+
+<pre><code class="language-jsp">&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; %&gt;
+&lt;%@ page isELIgnored=&quot;false&quot; %&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;view&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+${requestScope.user}
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></li>
+
+<li><p>Controller</p>
+
+<pre><code class="language-jsp">@RequestMapping(&quot;/map&quot;)
+public String map(Map map){
+User user = new User(1,&quot;张三&quot;,null);
+map.put(&quot;user&quot;,user);
+return &quot;view&quot;;
+}
+</code></pre></li>
+</ul>
+
+<p>2，Model</p>
+
+<pre><code class="language-java">@RequestMapping(&quot;/model&quot;)
+public String model(Model model){
+    User user = new User(1,&quot;张三&quot;,null);
+    model.addAttribute(&quot;user&quot;,user);
+    return &quot;view&quot;;
+}
+</code></pre>
+
+<p>3，ModelAndView</p>
+
+<pre><code class="language-java">@RequestMapping(&quot;/modelAttribute1&quot;)
+public ModelAndView modelAttribute1(){
+    User user = new User(1,&quot;张三&quot;,null);
+    ModelAndView modelAndView = new ModelAndView();
+    modelAndView.addObject(&quot;user&quot;,user);
+    modelAndView.setViewName(&quot;view&quot;);
+    return  modelAndView;
+}
+
+@RequestMapping(&quot;/modelAttribute2&quot;)
+public ModelAndView modelAttribute2(){
+    User user = new User(1,&quot;张三&quot;,null);
+    ModelAndView modelAndView = new ModelAndView();
+    View view = new InternalResourceView(&quot;/view.jps&quot;);
+    modelAndView.addObject(&quot;user&quot;,user);
+    modelAndView.setView(view);
+    return  modelAndView;
+}
+</code></pre>
+
+<p>4，@ModelAttribute</p>
+
+<pre><code class="language-java">@ModelAttribute
+public User getUser(){
+    User user = new User(1,&quot;张三&quot;,null);
+    return user;
+}
+
+@RequestMapping(&quot;/modelAttribute3&quot;)
+public String modelAttribute3(){
+    return &quot;view&quot;;
+}
+</code></pre>
+
+<p>5, 原生方式  HttpServletRequest</p>
+
+<pre><code class="language-java">@RequestMapping(&quot;/request&quot;)
+public String request(HttpServletRequest request){
+    User user = new User(1,&quot;张三&quot;,null);
+    request.setAttribute(&quot;user&quot;,user);
+    return &quot;view&quot;;
+}
+</code></pre>
+
+<h5 id="将模型数据存入到-session-中">将模型数据存入到 session 中</h5>
+
+<p>1，原生方式  HttpSession</p>
+
+<pre><code class="language-java">@RequestMapping(&quot;/session&quot;)
+public String session(HttpSession session){
+    User user = new User(1,&quot;张三&quot;,null);
+    session.setAttribute(&quot;user&quot;,user);
+    return &quot;view&quot;;
+}
+</code></pre>
+
+<p>2，@SessionAttributes</p>
+
+<ul>
+<li><p>当该类request 存入 “user” 时 自动存入 session 中</p>
+
+<pre><code class="language-java">@SessionAttributes(value = &quot;user&quot;)
+public class ConverterHandler {
+	
+}
+</code></pre></li>
+
+<li><p>当该类 request 有 User 类时， 自动存入 session 中</p>
+
+<pre><code class="language-java">@SessionAttributes(types = User.class)
+public class ConverterHandler {
+}
+</code></pre></li>
+</ul>
+
+<h4 id="spring-mvc-自定义类型转换器">Spring MVC 自定义类型转换器</h4>
+
+<p>数据类型转换器是指客户端 HTTP 请求中的转换为业务方法中定义的行参。</p>
+
+<p>自定义表示开发者可以自主设计转换的方式，HandlerApdter 已经提供了通用的转换（String转int,，String 转 double，表单的数据封装..）</p>
+
+<p>但是在特殊的业务场景中，HandlerApdter无法进行转换，就需要开发者自行定义。</p>
+
+<blockquote>
+<p>代码演示</p>
+</blockquote>
+
+<ul>
+<li><p>创建Converter类实现Converter泛型接口</p>
+
+<pre><code class="language-java">public class DateConverter implements Converter&lt;String, Date&gt; {
+
+private String pattern;
+
+public DateConverter(String pattern) {
+    this.pattern = pattern;
+}
+
+@Override
+public Date convert(String source) {
+
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(this.pattern);
+    Date date = null;
+    try {
+        date = simpleDateFormat.parse(source);
+    } catch (ParseException e) {
+        e.printStackTrace();
+    }
+ 
+    return date;
+}
+}
+</code></pre></li>
+
+<li><p>配置 springmvc.xml 添加转换器配置</p>
+
+<pre><code class="language-xml">&lt;!--配置自定义转换器--&gt;
+&lt;bean id=&quot;conversinService&quot; class=&quot;org.springframework.context.support.ConversionServiceFactoryBean&quot;&gt;
+&lt;property name=&quot;converters&quot;&gt;
+    &lt;list&gt;
+        &lt;bean class=&quot;com.mvc.converter.DateConverter&quot;&gt;
+            &lt;constructor-arg type=&quot;java.lang.String&quot; value=&quot;yyyy-MM-dd&quot;/&gt;
+        &lt;/bean&gt;
+    &lt;/list&gt;
+&lt;/property&gt;
+&lt;/bean&gt;
+
+
+&lt;mvc:annotation-driven conversion-service=&quot;conversinService&quot;&gt;
+&lt;mvc:message-converters register-defaults=&quot;true&quot;&gt;
+    &lt;!--    消息转换器，解决@ResponseBoyd 中文乱码--&gt;
+    &lt;bean class=&quot;org.springframework.http.converter.StringHttpMessageConverter&quot;&gt;
+        &lt;property name=&quot;supportedMediaTypes&quot; value=&quot;text/html;charset=UTF-8&quot;/&gt;
+    &lt;/bean&gt;
+
+    &lt;!-- 配置fastjosn--&gt;
+    &lt;bean class=&quot;com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter4&quot;/&gt;
+&lt;/mvc:message-converters&gt;
+&lt;/mvc:annotation-driven&gt;
+</code></pre></li>
+
+<li><p>controller 层</p>
+
+<pre><code class="language-java">@Controller
+@RequestMapping(&quot;/converter&quot;)
+public class ConverterHandler {
+
+@RequestMapping(&quot;/date&quot;)
+@ResponseBody
+public String Date(Date date){
+    return date.toString();
+}
+
+}
+</code></pre></li>
+
+<li><p>jsp 发送请求</p>
+
+<pre><code class="language-jsp">&lt;body&gt;
+&lt;form action=&quot;converter/date&quot; method=&quot;post&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;date&quot;&gt;yyyy-MM-dd&lt;br/&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+</code></pre></li>
+</ul>
+
+<h4 id="spring-mvc-rest">Spring MVC REST</h4>
+
+<p>REST：Representational State Transfer，资源表现层状态转换，目前主流的一种互联网软件架构，它结构清晰，标准规范，易于理解，便于扩展。</p>
+
+<ul>
+<li>资源（Resource）</li>
+</ul>
+
+<p>网络上的一个实体，或者说网络中存在的一个具体信息，一段文本，一张图片，一首歌曲，一段视频等，总之就是一个具体的存在。可以用 URI （统一资源定位符）指向它，每个资源都有对应的一个特定的 URI，要获取该资源时，只需访问对应的 URI 即可。</p>
+
+<ul>
+<li>表现层（Representation）</li>
+</ul>
+
+<p>资源具体呈现出来的形式，比如文本可以用 txt 格式表示，也可以用 HTML，JSON 等格式来表示。</p>
+
+<ul>
+<li>状态转换（State Transfer）</li>
+</ul>
+
+<p>客户端如果希望操作服务器中的某一个资源，就需要通过某种方式让服务端发生状态转换，而这种转换是建立再表现层之上的，所以叫做“表现层状态转换”。</p>
+
+<blockquote>
+<p>特点</p>
+</blockquote>
+
+<ul>
+<li><p>URL 更加简洁</p></li>
+
+<li><p>有利于不同系统之间的资源共享，只需遵守REST的规范，不需要进行其他配置即可实现资源共享。</p></li>
+</ul>
+
+<blockquote>
+<p>如何使用</p>
+</blockquote>
+
+<p>REST 具体操作就是HTTP 协议中四个表示操作方式的动词分别对应 CRUD 基本操作。</p>
+
+<p>GET  用来获取资源。</p>
+
+<p>POST    用来表示 新建资源。</p>
+
+<p>PUT 用来修改资源。</p>
+
+<p>DELETE  用来表示删除资源。</p>
+
+<h4 id="spring-mvc-文件上传下载">Spring MVC 文件上传下载</h4>
+
+<h5 id="单文件上传">单文件上传</h5>
+
+<p>底层是通过 Apache fileupload 组件完成上传，Spring MVC 对这种方式进行了封装。</p>
+
+<ul>
+<li><p>pom.xml</p>
+
+<pre><code class="language-xml">&lt;!-- 文件上传依赖 --&gt;
+&lt;dependency&gt;
+&lt;groupId&gt;commons-io&lt;/groupId&gt;
+&lt;artifactId&gt;commons-io&lt;/artifactId&gt;
+&lt;version&gt;2.5&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+&lt;groupId&gt;commons-fileupload&lt;/groupId&gt;
+&lt;artifactId&gt;commons-fileupload&lt;/artifactId&gt;
+&lt;version&gt;1.3.1&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre></li>
+
+<li><p>controller</p>
+
+<pre><code class="language-java">
+@RequestMapping(&quot;/file&quot;)
+@Controller
+public class UploadHandler {
+
+@RequestMapping(&quot;/upload&quot;)
+public String upload(MultipartFile img,HttpServletRequest request){
+    if (img.getSize() &gt; 0){
+        //获取文件上传的路径
+        String path = request.getServletContext().getRealPath(&quot;file&quot;);
+        //获取上传的文件名
+        String name = img.getOriginalFilename();
+        File file = new File(path,name);
+        try {
+            img.transferTo(file); //上传
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        request.setAttribute(&quot;path&quot;,name); //存到 request
+    }
+
+    return &quot;upload&quot;;
+}
+}
+</code></pre></li>
+
+<li><p>jsp</p>
+
+<pre><code class="language-jsp">&lt;body&gt;
+
+
+&lt;form action=&quot;file/upload&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+&lt;input type=&quot;file&quot; name=&quot;img&quot;&gt;&lt;br/&gt;
+&lt;input type=&quot;submit&quot; name=&quot;提交&quot;&gt;
+&lt;/form&gt;
+
+&lt;img src=&quot;${path}&quot;&gt;
+
+&lt;/body&gt;
+</code></pre></li>
+</ul>
+
+<h5 id="多文件下载">多文件下载</h5>
+
+<ul>
+<li><p>controller</p>
+
+<pre><code class="language-java">@RequestMapping(&quot;/uploads&quot;)
+public String uploads(MultipartFile[] imgs,HttpServletRequest request){
+
+List list = new ArrayList();
+
+for (MultipartFile img:imgs) {
+    if (img.getSize() &gt; 0){
+        //获取文件上传的路径
+        String path = request.getServletContext().getRealPath(&quot;file&quot;);
+        //获取上传的文件名
+        String name = img.getOriginalFilename();
+        File file = new File(path,name);
+        try {
+            img.transferTo(file); //上传
+            list.add(name); //保存后的文件路径
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+}
+request.setAttribute(&quot;fileList&quot;,list); //存到 request
+return &quot;upload&quot;;
+}
+</code></pre></li>
+
+<li><p>jsp （再用jstl 遍历list）</p>
+
+<pre><code class="language-jsp">&lt;form action=&quot;file/uploads&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+&lt;input type=&quot;file&quot; name=&quot;imgs&quot;&gt;&lt;br/&gt;
+&lt;input type=&quot;file&quot; name=&quot;imgs&quot;&gt;&lt;br/&gt;
+&lt;input type=&quot;file&quot; name=&quot;imgs&quot;&gt;&lt;br/&gt;
+&lt;input type=&quot;submit&quot; name=&quot;提交&quot;&gt;
+&lt;/form&gt;
+</code></pre></li>
+</ul>
+
+<h5 id="下载">下载</h5>
+</article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<div class="utterances"></div>
+<script src="https://utteranc.es/client.js"
+        repo="example/example.github.io"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+  <div class="footer container-lg width-full p-responsive" role="contentinfo">
+    <div
+        class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+        <ul
+            class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+            <li class="mr-3 mr-lg-0">© 2019. Theme by <a href="https://github.com/MeiK2333/github-style"><span>github-style</span></a></li>
+        </ul>
+
+        <a aria-label="Homepage" title="PinkGuy主页" class="footer-octicon d-none d-lg-block mx-lg-4"
+            href="https://pinkguy233.github.io/">
+            <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24"
+                aria-hidden="true">
+                <path fill-rule="evenodd"
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                </path>
+            </svg>
+        </a>
+        <ul
+            class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+        </ul>
+    </div>
+    <div class="d-flex flex-justify-center pb-6">
+        <span class="f6 text-gray-light"></span>
+    </div>
+</div>
+
+<script crossorigin="anonymous"
+    type="application/javascript" src="https://pinkguy233.github.io/js/frameworks.js"></script>
+
+<script crossorigin="anonymous" async="async"
+    type="application/javascript" src="https://pinkguy233.github.io/js/github-bootstrap.js"></script>
+<script>
+    let classs = ['pinned-item-desc', 'text-gray', 'text-small', 'd-block', 'mt-2', 'mb-3'];
+    const pinned_posts = document.getElementsByName('pinned-post');
+    for (let i = 0; i < pinned_posts.length; i++) {
+        for (let j = 0; j < classs.length; j++) {
+            const ps = pinned_posts[i].getElementsByTagName('p');
+            for (let k = 0; k < ps.length; k++) {
+                ps[k].classList.add(classs[j]);
+            }
+        }
+    }
+    classs = [ 'd-inline-block', 'text-gray', 'mb-2', 'pr-4'];
+    const posts_posts = document.getElementsByName('posts-post');
+    for (let i = 0; i < posts_posts.length; i++) {
+        for (let j = 0; j < classs.length; j++) {
+            const ps = posts_posts[i].getElementsByTagName('p');
+            for (let k = 0; k < ps.length; k++) {
+                ps[k].classList.add(classs[j]);
+            }
+        }
+    }
+</script>
+</body>
+
+</html>

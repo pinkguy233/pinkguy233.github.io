@@ -180,7 +180,7 @@
             <a class="UnderlineNav-item mr-0 mr-md-1 mr-lg-3 selected" href="https://pinkguy233.github.io/posts/">
                 Posts
                 <span class="Counter hide-lg hide-md hide-sm">
-                    9
+                    13
                 </span>
             </a>
             <a class="UnderlineNav-item mr-0 mr-md-1 mr-lg-3 " href="https://pinkguy233.github.io/about/">
@@ -192,6 +192,89 @@
     <div class="position-relative">
         <div id="user-repositories-list">
             <ul data-filterable-for="your-repos-filter" data-filterable-type="substring">
+                
+                <li class="col-12 d-flex width-full py-4 border-bottom public fork">
+                    <div class="col-12 col-lg-12 d-inline-block">
+                        <div class="d-inline-block mb-1">
+                            <h3>
+                                <a href="https://pinkguy233.github.io/post/springboot-web%E5%8A%A8%E6%80%81%E8%B5%84%E6%BA%90/">Springboot thymeleaf模板</a>
+                            </h3>
+                        </div>
+
+                        <div name="posts-post">
+                             ​ springboot默认不支持jsp
+​ 所以需要网页模板；推荐模板引擎 thymeleaf
+​ 网页 = 模板 + 数据
+引入thymeleaf  可以直接再创建时，将该选项勾上 或者后期加入该依赖；
+&lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.thymeleaf&lt;/groupId&gt; &lt;artifactId&gt;thymeleaf-spring5&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.thymeleaf.extras&lt;/groupId&gt; &lt;artifactId&gt;thymeleaf-extras-java8time&lt;/artifactId&gt; &lt;/dependency&gt; &lt;/dependencies&gt;   使用thymeleaf  上图得知只需将 html,放入类路径的templates中即可；   https://www.thymeleaf.org/documentation.html 使用文档地址 html文件导入命名空间
+&lt;!DOCTYPE html&gt; &lt;html xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;Insert title here&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;p th:text=&quot;${home.welcome}&quot;&gt;Welcome to our grocery store!&lt;/p&gt; &lt;/body&gt; &lt;/html&gt;   
+                        </div>
+
+                        <div class="f6 text-gray mt-2">
+                            Updated <relative-time datetime="2019-12-29" class="no-wrap"
+                                title="Modifyd at 2019/12/29">
+                                December 29, 2019</relative-time>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="col-12 d-flex width-full py-4 border-bottom public fork">
+                    <div class="col-12 col-lg-12 d-inline-block">
+                        <div class="d-inline-block mb-1">
+                            <h3>
+                                <a href="https://pinkguy233.github.io/post/springboot-web%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/">Springboot Web静态资源</a>
+                            </h3>
+                        </div>
+
+                        <div name="posts-post">
+                            springboot开发Web项目（静态资源 htm css js）
+​ springboot是一个jar，不能直接识别；
+​ 具体存放在 WebMvcAutoConfiguration中 addResourceHandlers方法指定（/webjars/）
+资源路径： ​ 也就是需要将静态文件 打包后，再引入；（方法比较麻烦，不推荐）
+ ​ spring boot约定：将资源放入指定的资源存放目录中；（推荐）
+&quot;classpath:/META-INF/resources/&quot;, //（classpath）类路径 &quot;classpath:/resources/&quot;, &quot;classpath:/static/&quot;, &quot;classpath:/public/&quot;   ​ - 以上路径直接访问，不需要加前缀
+设置欢迎页： ​ 在任意 资源文件夹里的 index.html 就是欢迎页；（直接域名访问）
+设置标签栏logo： ​ 网站中，网页标签的logo固定名字是：favicon.ico
+​ 自定义 favicon.ico，将它放入任意 资源文件里；
+自定义资源路径： ​ 在*application.proprestes*中
+spring.resources.static-locations=classpath:/res/,classpath:/resources/  ​ ps：*使用自定义资源目录后，之前的默认路径会失效*；
+&ndash; end&rsquo;
+​
+                        </div>
+
+                        <div class="f6 text-gray mt-2">
+                            Updated <relative-time datetime="2019-12-29" class="no-wrap"
+                                title="Modifyd at 2019/12/29">
+                                December 29, 2019</relative-time>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="col-12 d-flex width-full py-4 border-bottom public fork">
+                    <div class="col-12 col-lg-12 d-inline-block">
+                        <div class="d-inline-block mb-1">
+                            <h3>
+                                <a href="https://pinkguy233.github.io/post/springmvc%E5%AD%A6%E4%B9%A0/">SpringMVC学习</a>
+                            </h3>
+                        </div>
+
+                        <div name="posts-post">
+                            [TOC]
+第一个SpringMVC框架  代码实现
+  创建Maven-webapp工程，pom.xml；
+&lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt; &lt;version&gt;5.2.2.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;/dependencies&gt;  web.xml 添加拦截器
+&lt;servlet&gt; &lt;servlet-name&gt;dispatcherServlet&lt;/servlet-name&gt; &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt; &lt;init-param&gt; &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt; &lt;param-value&gt;classpath:springmvc.xml&lt;/param-value&gt; &lt;/init-param&gt; &lt;/servlet&gt; &lt;servlet-mapping&gt; &lt;servlet-name&gt;dispatcherServlet&lt;/servlet-name&gt; &lt;url-pattern&gt;/&lt;/url-pattern&gt; &lt;/servlet-mapping&gt;  创建springmvc.xml (自动扫描不知道在哪个个包所以导入了全部)
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:context=&quot;http://www.springframework.org/schema/context&quot; xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt; &lt;!-- 自动扫描--&gt; &lt;context:component-scan base-package=&quot;com.*&quot;&gt;&lt;/context:component-scan&gt; &lt;!-- 视图解析器--&gt; &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt; &lt;property name=&quot;prefix&quot; value=&quot;/&quot;&gt;&lt;/property&gt; &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;&gt;&lt;/property&gt; &lt;/bean&gt; &lt;/beans&gt;  创建controller
+package com.mvc.controller; import org.springframework.stereotype.Controller; import org.springframework.web.bind.annotation.RequestMapping; @Controller public class HelloHandler { @RequestMapping(&quot;/index&quot;) public String index(){ System.
+                        </div>
+
+                        <div class="f6 text-gray mt-2">
+                            Updated <relative-time datetime="2019-12-29" class="no-wrap"
+                                title="Modifyd at 2019/12/29">
+                                December 29, 2019</relative-time>
+                        </div>
+                    </div>
+                </li>
                 
                 <li class="col-12 d-flex width-full py-4 border-bottom public fork">
                     <div class="col-12 col-lg-12 d-inline-block">
@@ -359,53 +442,18 @@ start with 10	-- 起始值 指定序号从#开始; increment by 10	--步长 指�
                     </div>
                 </li>
                 
-                <li class="col-12 d-flex width-full py-4 border-bottom public fork">
-                    <div class="col-12 col-lg-12 d-inline-block">
-                        <div class="d-inline-block mb-1">
-                            <h3>
-                                <a href="https://pinkguy233.github.io/post/%E4%BC%AA%E5%88%97/">rownum和rowid伪列</a>
-                            </h3>
-                        </div>
-
-                        <div name="posts-post">
-                            伪列介绍：  伪列不存在于任何一张表中，但是会被所有的表共享 伪列可以从表中查询，但不能进行DML操作 常用的伪列有ROWID和ROWNUM  现有一张stuInfo表，对该表进行操作&mdash;
- STUNO STUNAME STUAGE STUID STUSEAT ---------- ---------------------------------------- ---------- ---------- ---------- 1 张三 18 1 2 李四 20 2 3 王五 15 3 4 张三 18 4 5 张三 20 5  DISTINCT（去重）关键字  不重复显示所有学员姓名和年龄 select DISTINCT stuName,stuAge From stuInfo
-STUNAME STUAGE ---------------------------------------- ---------- 王五 15 张三 20 张三 18 李四 20   可以看到少了一条学号4的数据；
-查询学生姓名，年龄，rowid与rownum （注意需要给表加别名）
-select rowid,rownum,s.stuname,s.stuage from stuInfo s  ROWID ROWNUM STUNAME STUAGE ------------------------------------------------------------------------- AAARUyAAEAAAAGQAAA 1 张三 18 AAARUyAAEAAAAGQAAB 2 李四 20 AAARUyAAEAAAAGQAAC 3 王五 15 AAARUyAAEAAAAGQAAD 4 张三 18 AAARUyAAEAAAAGQAAE 5 张三 20    ROWNUM ：逻辑序列  不用的sql语句在执行时，rownum的值不一致；
-                        </div>
-
-                        <div class="f6 text-gray mt-2">
-                            Updated <relative-time datetime="2019-11-25" class="no-wrap"
-                                title="Modifyd at 2019/11/25">
-                                November 25, 2019</relative-time>
-                        </div>
-                    </div>
-                </li>
-                
-                <li class="col-12 d-flex width-full py-4 border-bottom public fork">
-                    <div class="col-12 col-lg-12 d-inline-block">
-                        <div class="d-inline-block mb-1">
-                            <h3>
-                                <a href="https://pinkguy233.github.io/post/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">数据类型</a>
-                            </h3>
-                        </div>
-
-                        <div name="posts-post">
-                            前言： 程序当中有很多数据，每一个数据都是有相关的数据类型的，不同的数据类型占用空间的大小也不同.
-数据类型的作用是指导JVM运行程序的时候给该数据分配多大的内存空间。
-数据类型-介绍 java中的数据类型包括两种：  基本数据类型 引用数据类型 ###关于基本数据类型： 基本数据类型包括 四大类 八小种     第一类：整数型 第二类：浮点型     byte，short，int，long float,double       第三类：布尔型 第四类：字符型     boolean char    字符串属于==引用数据类型  字符串使用双引号“A”， 字符 使用双引号‘A’；  八种数据类型各自所占用空间大小是多少？    基本数据类型 占用空间大小【单位：字节】     byte 1   short 2   int 4   long 8   float 4   double 8   boolean 1   char 2    计算机在任何情况下只能识别二进制.
-                        </div>
-
-                        <div class="f6 text-gray mt-2">
-                            Updated <relative-time datetime="2019-11-24" class="no-wrap"
-                                title="Modifyd at 2019/11/24">
-                                November 24, 2019</relative-time>
-                        </div>
-                    </div>
-                </li>
-                
             </ul>
+            
+            <div class="paginate-container">
+                <div class="BtnGroup" data-test-selector="pagination">
+                    
+                    <button class="btn btn-outline BtnGroup-item" disabled="disabled">Previous</button>
+                    
+                    
+                    <a rel="nofollow" class="btn btn-outline BtnGroup-item" href="/post/page/2/">Next</a>
+                    
+                </div>
+            </div>
             
         </div>
     </div>
