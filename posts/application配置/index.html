@@ -9,7 +9,7 @@
         rel="stylesheet" href="https://pinkguy233.github.io/css/github.css" />
     <meta name="viewport" content="width=device-width">
 
-    <title>关于PinkGuy - PinkGuy主页</title>
+    <title>yml配置学习 - PinkGuy主页</title>
 
     <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://pinkguy233.github.io/images/favicon.ico">
     <meta name="theme-color" content="#1e2327">
@@ -86,16 +86,16 @@
                                     href="https://pinkguy233.github.io/">PinkGuy</a></span>
                             <span class="path-divider">/</span>
                             <strong itemprop="name" class="css-truncate-target" style="max-width: 410px"><a
-                                    href="https://pinkguy233.github.io/about/">关于PinkGuy</a></strong>
+                                    href="https://pinkguy233.github.io/posts/application%E9%85%8D%E7%BD%AE/">yml配置学习</a></strong>
 
                             <div class="d-block text-small text-gray">
-                                Created <time-ago datetime="2019-11-24" class="no-wrap"
-                                    title="Created at 2019/11/24">
-                                    2019-11-24</time-ago>
+                                Created <time-ago datetime="2019-12-25" class="no-wrap"
+                                    title="Created at 2019/12/25">
+                                    2019-12-25</time-ago>
                                 <span class="file-info-divider"></span>
-                                Modifyd <time-ago datetime="2019-11-24" class="no-wrap"
-                                    title="Modifyd at 2019/11/24">
-                                    2019-11-24</time-ago>
+                                Modifyd <time-ago datetime="2019-12-25" class="no-wrap"
+                                    title="Modifyd at 2019/12/25">
+                                    2019-12-25</time-ago>
                             </div>
                         </h1>
                     </div>
@@ -110,13 +110,89 @@
                     <div class="Box mt-3 position-relative">
                         <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
                             <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
-                                9 Words
+                                318 Words
                                 
                             </div>
                         </div>
 
                         <div id="readme" class="Box-body readme blob instapaper_body js-code-block-container">
-                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><p>还没想好写啥。。。</p>
+                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text">
+
+<p>默认全局配置文件：</p>
+
+<p>​   application.properties：</p>
+
+<ul>
+<li>k = v；</li>
+</ul>
+
+<p>​   application.yml :</p>
+
+<ul>
+<li><p>k：空格v</p></li>
+
+<li><p>yaml ain&rsquo;t myarkup language(yaml不是一个标记文档，xml是标记文档)</p></li>
+</ul>
+
+<h4 id="试用-application-yml">试用 application.yml</h4>
+
+<ul>
+<li><p>创建实体类（給上get set）</p></li>
+
+<li><pre><code class="language-java">public class Student {
+private String name;
+private int age;
+private boolean sex;
+private Date birthday;
+private Map location;
+private List hobbies;
+private String[] skills;
+private Pet pet;
+}
+</code></pre></li>
+
+<li><p>编写application.yml</p></li>
+
+<li><pre><code class="language-yml">student:
+name: zs
+age: 28
+sex: false
+birthday: 2019/12/24 #时间
+location: {province: 新疆,city: 西安} #map
+hobbies: 	#list集合
+    - 足球
+    - 篮球
+skills:  # 数组
+    - 编程
+pet:	# 特殊对象
+  pname: 刘波
+  page: 8
+</code></pre></li>
+
+<li><p>再在实体类加上（注解）</p></li>
+
+<li><pre><code class="language-java">@Component
+@ConfigurationProperties(prefix=&quot;student&quot;)
+</code></pre></li>
+
+<li><p>测试类调用</p>
+
+<pre><code class="language-java">@SpringBootTest
+class HelloWorldApplicationTests {
+
+@Autowired
+private Student stu;
+    
+@Test
+void contextLoads() {
+    System.out.println(stu.toString());
+}
+
+}
+</code></pre></li>
+</ul>
+
+<p>结果： Student [name=zs, age=28, sex=false, birthday=Tue Dec 24 00:00:00 CST 2019, location={province=新疆, city=西安}, hobbies=[足球, 篮球], skills=[编程], pet=Pet [pname=刘波, page=8]]</p>
 </article>
                         </div>
                     </div>

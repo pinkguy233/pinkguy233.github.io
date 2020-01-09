@@ -9,7 +9,7 @@
         rel="stylesheet" href="https://pinkguy233.github.io/css/github.css" />
     <meta name="viewport" content="width=device-width">
 
-    <title>关于PinkGuy - PinkGuy主页</title>
+    <title>springboot整合 - PinkGuy主页</title>
 
     <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://pinkguy233.github.io/images/favicon.ico">
     <meta name="theme-color" content="#1e2327">
@@ -86,16 +86,16 @@
                                     href="https://pinkguy233.github.io/">PinkGuy</a></span>
                             <span class="path-divider">/</span>
                             <strong itemprop="name" class="css-truncate-target" style="max-width: 410px"><a
-                                    href="https://pinkguy233.github.io/about/">关于PinkGuy</a></strong>
+                                    href="https://pinkguy233.github.io/posts/spring_mybatis/">springboot整合</a></strong>
 
                             <div class="d-block text-small text-gray">
-                                Created <time-ago datetime="2019-11-24" class="no-wrap"
-                                    title="Created at 2019/11/24">
-                                    2019-11-24</time-ago>
+                                Created <time-ago datetime="2019-12-25" class="no-wrap"
+                                    title="Created at 2019/12/25">
+                                    2019-12-25</time-ago>
                                 <span class="file-info-divider"></span>
-                                Modifyd <time-ago datetime="2019-11-24" class="no-wrap"
-                                    title="Modifyd at 2019/11/24">
-                                    2019-11-24</time-ago>
+                                Modifyd <time-ago datetime="2019-12-25" class="no-wrap"
+                                    title="Modifyd at 2019/12/25">
+                                    2019-12-25</time-ago>
                             </div>
                         </h1>
                     </div>
@@ -110,13 +110,284 @@
                     <div class="Box mt-3 position-relative">
                         <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
                             <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
-                                9 Words
+                                1290 Words
                                 
                             </div>
                         </div>
 
                         <div id="readme" class="Box-body readme blob instapaper_body js-code-block-container">
-                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><p>还没想好写啥。。。</p>
+                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><ul>
+<li><p>创建一个 Spring Initializr项目
+参照 ：
+<a href="https://pinkguy233.github.io/post/%E7%AC%AC%E4%B8%80%E4%B8%AAspringboot/">第一个Springboot</a></p>
+
+<pre><code>  
+</code></pre></li>
+</ul>
+
+<p><img src="https://pinkguy233.github.io/SpermWarehouse/SpringBoot/创建整合文件.png" alt="例2.png" /></p>
+
+<ul>
+<li>本文不使用application.properties文件 而使用更加简洁的application.yml文件。将resource文件夹下原有的application.properties文件删除，创建application.yml配置文件（备注：其实SpringBoot底层会把application.yml文件解析为application.properties），本文创建了两个yml文件（application.yml和application-dev.yml），分别来看一下内容</li>
+</ul>
+
+<p>application.yml</p>
+
+<pre><code class="language-yml">spring:
+  profiles:
+    active: dev
+</code></pre>
+
+<p>application-dev.yml</p>
+
+<pre><code class="language-yml">server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: 333
+    url: jdbc:mysql://localhost:3306/smbms
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.example.ssm.entity
+</code></pre>
+
+<ul>
+<li>创建 对应的表，（用自己的就好）</li>
+<li>创建包controller，entity，service，dao（习惯把数据层叫dao）。resources下创建mapper 文件夹，用于写sql语句；</li>
+<li>直接贴代码</li>
+</ul>
+
+<p>User.java (记得get set )</p>
+
+<pre><code class="language-java">  public class User {
+  
+      private  int id;
+      private  String userCode;
+      private  String userName;
+      private  String userPassword;
+      }
+</code></pre>
+
+<p>UserDao.java</p>
+
+<pre><code class="language-java">@Repository
+public interface UserDao {
+
+    List&lt;User&gt; loadAll();
+
+}
+</code></pre>
+
+<p>UserMapper.xml</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+
+&lt;mapper namespace=&quot;com.example.ssm.dao.UserDao&quot;&gt;
+
+    &lt;select id=&quot;loadAll&quot; resultType=&quot;com.example.ssm.entity.User&quot;&gt;
+     select * from smbms_user
+    &lt;/select&gt;
+
+&lt;/mapper&gt;
+</code></pre>
+
+<p>UserService.java</p>
+
+<pre><code class="language-java">@Service
+public class UserService {
+
+    @Autowired
+    private UserDao userDao;
+
+    public List&lt;User&gt; loadAll(){
+        return userDao.loadAll();
+    }
+}
+</code></pre>
+
+<p>UserController.java</p>
+
+<pre><code class="language-java">@Controller
+public class MasterController {
+
+    @Autowired
+    private UserService us;
+    
+	@ResponseBody //看情况加（加了直接输入，不加跳转到Hello,SpringBoot.html）
+    @RequestMapping(&quot;hello&quot;)
+    public String hello(){
+        System.out.println(&quot;进&quot;);
+        List&lt;User&gt; users = us.loadAll();
+        for (User u:users) {
+            System.out.println(u.toString());
+        }
+
+        return &quot;Hello,SpringBoot&quot;;
+    }
+</code></pre>
+
+<ul>
+<li>框架完成目录</li>
+</ul>
+
+<p><img src="https://pinkguy233.github.io/SpermWarehouse/SpringBoot/目录1.png" alt="SpringInitializr.png" /></p>
+
+<ul>
+<li><p>最后再给启动类 下面在 启动类 里加上注解用于给出需要扫描的 dao文件路径  （启动类路径一定要比其他类高一级）@MapperScan(&ldquo;com.example.ssm.dao&rdquo;)</p>
+
+<pre><code class="language-java">@MapperScan(&quot;com.example.ssm.dao&quot;)
+@SpringBootApplication
+public class SsmApplication {
+public static void main(String[] args) {
+    SpringApplication.run(SsmApplication.class, args);
+}
+
+}
+</code></pre></li>
+
+<li><p>最后浏览器输入</p></li>
+</ul>
+
+<p><img src="https://pinkguy233.github.io/SpermWarehouse/SpringBoot/效果1.png" alt="SpringInitializr.png" /></p>
+
+<ul>
+<li><p>控制台展示</p>
+
+<pre><code class="language-java">进
+
+User{id=1, userCode='admin', userName='系统管理员', userPassword='1234567'}
+User{id=2, userCode='liming', userName='我', userPassword='0000000'}
+User{id=5, userCode='hanlubiao', userName='韩路彪', userPassword='0000000'}
+User{id=6, userCode='zhanghua', userName='张华', userPassword='0000000'}
+User{id=7, userCode='wangyang', userName='王洋', userPassword='0000000'}
+User{id=8, userCode='zhaoyan', userName='赵燕', userPassword='0000000'}
+User{id=10, userCode='sunlei', userName='孙磊', userPassword='0000000'}
+User{id=11, userCode='sunxing', userName='孙兴', userPassword='0000000'}
+User{id=12, userCode='zhangchen', userName='张晨', userPassword='0000000'}
+User{id=13, userCode='dengchao', userName='邓超', userPassword='0000000'}
+User{id=14, userCode='yangguo', userName='杨过', userPassword='0000000'}
+User{id=15, userCode='zhaomin', userName='赵敏', userPassword='0000000'}
+User{id=16, userCode='liubo', userName='刘波', userPassword='00000000'}
+User{id=17, userCode='liubo', userName='刘波', userPassword='00000000'}
+User{id=27, userCode='null', userName='null', userPassword='null'}
+User{id=28, userCode='null', userName='null', userPassword='null'}
+</code></pre></li>
+</ul>
+
+<hr />
+
+<p>尝试加入SpringMVC</p>
+
+<p>​   application-dev.yml 中加入模板代码块；</p>
+
+<p>​   pom.xml 中添加  前端模板，顺便修改mysql驱动（我是改了，不然版本有点高启动不了）</p>
+
+<p>​   修改controller</p>
+
+<p>​   templates目录下添加index.html</p>
+
+<p>application-dev.yml</p>
+
+<pre><code class="language-yml">server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: 333
+    url: jdbc:mysql://localhost:3306/smbms
+    driver-class-name: com.mysql.jdbc.Driver
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.example.ssm.entity
+</code></pre>
+
+<p>pom.xml</p>
+
+<pre><code class="language-xml">   &lt;dependency&gt; &lt;!-- 需要修改的 --&gt;
+            &lt;groupId&gt;mysql&lt;/groupId&gt;
+            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+            &lt;version&gt;5.1.38&lt;/version&gt;
+   &lt;/dependency&gt;
+   
+      &lt;dependency&gt; &lt;!-- 添加的 --&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+</code></pre>
+
+<p>Controller.java</p>
+
+<pre><code class="language-java">@Controller
+public class MasterController {
+
+    @Autowired
+    private UserService us;
+
+    @RequestMapping(&quot;hello&quot;)
+    public String hello(Model mo){
+
+        System.out.println(&quot;进&quot;);
+        List&lt;User&gt; users = us.loadAll();
+        for (User u:users) {
+            System.out.println(u.toString());
+        }
+        mo.addAttribute(&quot;u&quot;,users);
+        return &quot;index&quot;;
+    }
+</code></pre>
+
+<p>index.html</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt; &lt;!-- 注意加th --&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;index&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+
+&lt;table width=&quot;500px&quot; &gt;
+    &lt;tr&gt;
+        &lt;td&gt;ID&lt;/td&gt;
+        &lt;td&gt;姓名&lt;/td&gt;
+        &lt;td&gt;密码&lt;/td&gt;
+        &lt;td&gt;电话&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr th:each=&quot;us : ${u}&quot; &gt;
+        &lt;td th:text=&quot;${us.id}&quot;&gt;&lt;/td&gt;
+        &lt;td th:text=&quot;${us.userName}&quot;&gt;&lt;/td&gt;
+        &lt;td th:text=&quot;${us.userPassword}&quot;&gt;&lt;/td&gt;
+        &lt;td th:text=&quot;${us.userCode}&quot;&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<ul>
+<li>启动后效果</li>
+</ul>
+
+<p><img src="https://pinkguy233.github.io/SpermWarehouse/SpringBoot/效果2.png" alt="SpringInitializr.png" /></p>
+
+<p>以上就是全部内容</p>
+
+<p><img src="https://pinkguy233.github.io/SpermWarehouse/pichi.png" alt="SpringInitializr.png" /></p>
 </article>
                         </div>
                     </div>

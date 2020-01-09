@@ -9,7 +9,7 @@
         rel="stylesheet" href="https://pinkguy233.github.io/css/github.css" />
     <meta name="viewport" content="width=device-width">
 
-    <title>关于PinkGuy - PinkGuy主页</title>
+    <title>Hibernate搭建步骤 - PinkGuy主页</title>
 
     <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://pinkguy233.github.io/images/favicon.ico">
     <meta name="theme-color" content="#1e2327">
@@ -86,16 +86,16 @@
                                     href="https://pinkguy233.github.io/">PinkGuy</a></span>
                             <span class="path-divider">/</span>
                             <strong itemprop="name" class="css-truncate-target" style="max-width: 410px"><a
-                                    href="https://pinkguy233.github.io/about/">关于PinkGuy</a></strong>
+                                    href="https://pinkguy233.github.io/posts/hibernate/">Hibernate搭建步骤</a></strong>
 
                             <div class="d-block text-small text-gray">
-                                Created <time-ago datetime="2019-11-24" class="no-wrap"
-                                    title="Created at 2019/11/24">
-                                    2019-11-24</time-ago>
+                                Created <time-ago datetime="2019-11-29" class="no-wrap"
+                                    title="Created at 2019/11/29">
+                                    2019-11-29</time-ago>
                                 <span class="file-info-divider"></span>
-                                Modifyd <time-ago datetime="2019-11-24" class="no-wrap"
-                                    title="Modifyd at 2019/11/24">
-                                    2019-11-24</time-ago>
+                                Modifyd <time-ago datetime="2019-11-29" class="no-wrap"
+                                    title="Modifyd at 2019/11/29">
+                                    2019-11-29</time-ago>
                             </div>
                         </h1>
                     </div>
@@ -110,13 +110,121 @@
                     <div class="Box mt-3 position-relative">
                         <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
                             <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
-                                9 Words
+                                449 Words
                                 
                             </div>
                         </div>
 
                         <div id="readme" class="Box-body readme blob instapaper_body js-code-block-container">
-                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><p>还没想好写啥。。。</p>
+                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text">
+
+<h4 id="1-导入相关的jar包">1.导入相关的jar包</h4>
+
+<p>![jar]()</p>
+
+<h4 id="2-配置hibernate主配置">2.配置hibernate主配置</h4>
+
+<ul>
+<li><p>创建名字默认hibernate.cfg.xml</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE hibernate-configuration PUBLIC
+    &quot;-//Hibernate/Hibernate Configuration DTD 3.0//EN&quot;
+    &quot;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&quot;&gt;
+
+&lt;hibernate-configuration&gt;
+&lt;session-factory&gt;
+    &lt;!-- 1.配置数据库信息 --&gt;
+    &lt;!--必须有的 --&gt;
+    &lt;property name=&quot;connection.url&quot;&gt;
+        jdbc:oracle:thin:@192.168.206.1:1521:orcl
+    &lt;/property&gt;
+    &lt;property name=&quot;connection.driver_class&quot;&gt;
+        oracle.jdbc.driver.OracleDriver
+    &lt;/property&gt;
+        
+    &lt;property name=&quot;connection.username&quot;&gt;scott&lt;/property&gt;&lt;!-- 用户 --&gt;
+    &lt;property name=&quot;connection.password&quot;&gt;333&lt;/property&gt;&lt;!-- 密码 --&gt;
+
+    &lt;property name=&quot;dialect&quot;&gt;
+        org.hibernate.dialect.ProgressDialect
+    &lt;/property&gt;
+        
+    &lt;!-- 辅助文件 --&gt;
+    &lt;property name=&quot;show_sql&quot;&gt;true&lt;/property&gt;   &lt;!-- 输出底层sql语句 --&gt;
+		&lt;property name=&quot;format_sql&quot;&gt;true&lt;/property&gt; &lt;!-- 输出底层sql语句格式 --&gt;
+        
+		&lt;!-- 添加映射文件 --&gt;
+    &lt;mapping resource=&quot;dept.hbm.xml&quot;/&gt;
+&lt;/session-factory&gt;
+&lt;/hibernate-configuration&gt;
+</code></pre></li>
+</ul>
+
+<h4 id="3-测试配置是否正常">3.测试配置是否正常</h4>
+
+<ul>
+<li><p>工具类</p>
+
+<pre><code>public class Hibernate {
+static SessionFactory factory;
+static Session session = null;
+static {
+    Configuration cfg = new Configuration().configure();
+    factory = cfg.buildSessionFactory();
+}
+
+public  static  Session getSession(){
+    if (session == null) session =factory.openSession();
+    return  session;
+}
+}
+</code></pre></li>
+
+<li><p>测试类</p>
+
+<pre><code>public class TestHb {
+public static void main(String[] args) {
+    Session session  = Hibernate.getSession();
+    System.out.println(session);
+}
+}
+</code></pre></li>
+</ul>
+
+<h4 id="4-创建实体类映射文件">4.创建实体类映射文件</h4>
+
+<ul>
+<li>配置实体类与数据库表的一一对应关系,映射关系</li>
+<li>建议命名 .hbm.xml;</li>
+
+<li><p>建议column里用大写</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE hibernate-mapping PUBLIC
+    &quot;-//Hibernate/Hibernate Configuration DTD 3.0//EN&quot;
+    &quot;http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd&quot;&gt;
+&lt;hibernate-mapping&gt;
+&lt;class name=&quot;com.hb.entity.Dept&quot; &gt;  &lt;!-- 实体类的全类名 --&gt;
+    &lt;id name=&quot;deptno&quot; column=&quot;DEPTNO&quot;&gt;  &lt;!-- 设置主键 --&gt;
+        &lt;generator class=&quot;assigned&quot;&gt;&lt;/generator&gt; &lt;!-- 手动增长 --&gt;
+    &lt;/id&gt;
+    &lt;property name=&quot;dname&quot; column=&quot;DNAME&quot;/&gt;
+    &lt;property name=&quot;loc&quot; column=&quot;LOC&quot;/&gt;
+&lt;/class&gt;
+&lt;/hibernate-mapping&gt;
+</code></pre></li>
+</ul>
+
+<h5 id="5-获取session使用hibernate">5.获取session使用hibernate</h5>
+
+<pre><code> Transaction tx = session.beginTransaction(); //获取提交事务对象
+ Session session = Hibernate.getSession();
+        Dept dept = new Dept(50,&quot;阿里&quot;,&quot;杭州&quot;);
+   session.save(dept);
+  tx.commit();
+  System.out.println(&quot;数据添加成功&quot;);
+</code></pre>
 </article>
                         </div>
                     </div>

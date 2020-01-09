@@ -9,7 +9,7 @@
         rel="stylesheet" href="https://pinkguy233.github.io/css/github.css" />
     <meta name="viewport" content="width=device-width">
 
-    <title>关于PinkGuy - PinkGuy主页</title>
+    <title>第一个Springboot - PinkGuy主页</title>
 
     <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://pinkguy233.github.io/images/favicon.ico">
     <meta name="theme-color" content="#1e2327">
@@ -86,16 +86,16 @@
                                     href="https://pinkguy233.github.io/">PinkGuy</a></span>
                             <span class="path-divider">/</span>
                             <strong itemprop="name" class="css-truncate-target" style="max-width: 410px"><a
-                                    href="https://pinkguy233.github.io/about/">关于PinkGuy</a></strong>
+                                    href="https://pinkguy233.github.io/posts/%E7%AC%AC%E4%B8%80%E4%B8%AAspringboot/">第一个Springboot</a></strong>
 
                             <div class="d-block text-small text-gray">
-                                Created <time-ago datetime="2019-11-24" class="no-wrap"
-                                    title="Created at 2019/11/24">
-                                    2019-11-24</time-ago>
+                                Created <time-ago datetime="2019-12-23" class="no-wrap"
+                                    title="Created at 2019/12/23">
+                                    2019-12-23</time-ago>
                                 <span class="file-info-divider"></span>
-                                Modifyd <time-ago datetime="2019-11-24" class="no-wrap"
-                                    title="Modifyd at 2019/11/24">
-                                    2019-11-24</time-ago>
+                                Modifyd <time-ago datetime="2019-12-23" class="no-wrap"
+                                    title="Modifyd at 2019/12/23">
+                                    2019-12-23</time-ago>
                             </div>
                         </h1>
                     </div>
@@ -110,13 +110,51 @@
                     <div class="Box mt-3 position-relative">
                         <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
                             <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
-                                9 Words
+                                252 Words
                                 
                             </div>
                         </div>
 
                         <div id="readme" class="Box-body readme blob instapaper_body js-code-block-container">
-                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><p>还没想好写啥。。。</p>
+                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text">
+
+<h4 id="创建一个springboot-maven文件">创建一个SpringBoot-Maven文件；</h4>
+
+<ul>
+<li>方式1：可以直接从Idea工具中选择Spring Initializr创建Maven工程，然后导入相关jar包；（第一次导入会很慢）</li>
+<li>方式2：进入 <a href="https://start.spring.io/">https://start.spring.io/</a>  直接创建项目，再使用工具导入 Maven项目；</li>
+</ul>
+
+<p><img src="https://pinkguy233.github.io/SpermWarehouse/SpringBoot/SpringInitializr.png" alt="SpringInitializr.png" /></p>
+
+<h4 id="创建一个controller测试">创建一个Controller测试；</h4>
+
+<pre><code class="language-java">@Controller
+public class HelloWorldController {
+	@ResponseBody
+	@RequestMapping(&quot;hello&quot;)
+		public String helloWorld() {
+			return &quot;HelloWord,SpringBoot&quot;;
+		}
+}
+</code></pre>
+
+<p>注意：使用@SpringBootApplication 注解 Controller必须在该注解所在包下；</p>
+
+<p><img src="https://pinkguy233.github.io/SpermWarehouse/SpringBoot/例1.png" alt="SpringInitializr.png" /></p>
+
+<ul>
+<li>@SpringBootConfiguration
+
+<ul>
+<li>包含@Configuration，表示:1.该类是一个配置类，2.会自动纳入Spring容器中</li>
+</ul></li>
+<li>@EnableAutoConfiguration</li>
+</ul>
+
+<h4 id="运行项目">运行项目</h4>
+
+<p><img src="https://pinkguy233.github.io/SpermWarehouse/SpringBoot/例2.png" alt="例2.png" /></p>
 </article>
                         </div>
                     </div>

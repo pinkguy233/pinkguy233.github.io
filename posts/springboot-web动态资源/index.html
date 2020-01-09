@@ -9,7 +9,7 @@
         rel="stylesheet" href="https://pinkguy233.github.io/css/github.css" />
     <meta name="viewport" content="width=device-width">
 
-    <title>关于PinkGuy - PinkGuy主页</title>
+    <title>Springboot thymeleaf模板 - PinkGuy主页</title>
 
     <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://pinkguy233.github.io/images/favicon.ico">
     <meta name="theme-color" content="#1e2327">
@@ -86,16 +86,16 @@
                                     href="https://pinkguy233.github.io/">PinkGuy</a></span>
                             <span class="path-divider">/</span>
                             <strong itemprop="name" class="css-truncate-target" style="max-width: 410px"><a
-                                    href="https://pinkguy233.github.io/about/">关于PinkGuy</a></strong>
+                                    href="https://pinkguy233.github.io/posts/springboot-web%E5%8A%A8%E6%80%81%E8%B5%84%E6%BA%90/">Springboot thymeleaf模板</a></strong>
 
                             <div class="d-block text-small text-gray">
-                                Created <time-ago datetime="2019-11-24" class="no-wrap"
-                                    title="Created at 2019/11/24">
-                                    2019-11-24</time-ago>
+                                Created <time-ago datetime="2019-12-29" class="no-wrap"
+                                    title="Created at 2019/12/29">
+                                    2019-12-29</time-ago>
                                 <span class="file-info-divider"></span>
-                                Modifyd <time-ago datetime="2019-11-24" class="no-wrap"
-                                    title="Modifyd at 2019/11/24">
-                                    2019-11-24</time-ago>
+                                Modifyd <time-ago datetime="2019-12-29" class="no-wrap"
+                                    title="Modifyd at 2019/12/29">
+                                    2019-12-29</time-ago>
                             </div>
                         </h1>
                     </div>
@@ -110,13 +110,71 @@
                     <div class="Box mt-3 position-relative">
                         <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
                             <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
-                                9 Words
+                                176 Words
                                 
                             </div>
                         </div>
 
                         <div id="readme" class="Box-body readme blob instapaper_body js-code-block-container">
-                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><p>还没想好写啥。。。</p>
+                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text">
+
+<p>​   springboot默认不支持jsp</p>
+
+<p>​   所以需要网页模板；推荐模板引擎 thymeleaf</p>
+
+<p>​   网页 = 模板 + 数据</p>
+
+<h5 id="引入thymeleaf">引入thymeleaf</h5>
+
+<ul>
+<li>可以直接再创建时，将该选项勾上</li>
+
+<li><p>或者后期加入该依赖；</p>
+
+<pre><code class="language-xml">	&lt;dependencies&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+			&lt;artifactId&gt;spring-boot-starter&lt;/artifactId&gt;
+		&lt;/dependency&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.thymeleaf&lt;/groupId&gt;
+			&lt;artifactId&gt;thymeleaf-spring5&lt;/artifactId&gt;
+		&lt;/dependency&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.thymeleaf.extras&lt;/groupId&gt;
+			&lt;artifactId&gt;thymeleaf-extras-java8time&lt;/artifactId&gt;
+		&lt;/dependency&gt;
+	&lt;/dependencies&gt;
+</code></pre></li>
+</ul>
+
+<h5 id="使用thymeleaf">使用thymeleaf</h5>
+
+<p><img src="https://pinkguy233.github.io/SpermWarehouse/SpringBoot/templates/默认路径-1.png" alt="web-1.png" /></p>
+
+<ul>
+<li>上图得知只需将 html,放入类路径的templates中即可；</li>
+</ul>
+
+<p><img src="https://pinkguy233.github.io/SpermWarehouse/SpringBoot/templates/默认路径-2.png" alt="web-1.png" /></p>
+
+<ul>
+<li><a href="https://www.thymeleaf.org/documentation.html">https://www.thymeleaf.org/documentation.html</a>  使用文档地址</li>
+
+<li><p>html文件导入命名空间</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;Insert title here&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p th:text=&quot;${home.welcome}&quot;&gt;Welcome to our grocery store!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></li>
+</ul>
 </article>
                         </div>
                     </div>
